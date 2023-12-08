@@ -98,3 +98,7 @@ SNSで交流している万年筆インクコレクターは多いため、そ�
 - 詳細ページのSNSシェア機能
 - LINE認証
 - 管理者画面
+
+# ■ ER図
+
+https://www.figma.com/file/n8daufoSvAelgwm2g5yCj5/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?type=design&node-id=0%3A1&mode=design&t=4ONzqeay9w5FYzHf-1
