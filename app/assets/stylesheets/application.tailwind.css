@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background: #FCF9F4;
+  color: #2b2446;
+  font-family: 'Josefin Sans', 'Zen Kaku Gothic New', sans-serif;
+}

@@ -1,7 +1,75 @@
-<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-  Tailwind
-</button>
-
-<div class="p-4 space-y-2" data-theme="cupcake">
-  <button class="btn btn-primary">Daisy</button>
+<div class="flex justify-center w-5/6 mx-auto">
+  <div class='text-center max-w-lg'>
+    <%= image_tag 'logo.jpeg' %>
+    <div role="tablist" class="tabs tabs-lifted">
+      <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="インクを探す" />
+      <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">Tab content 1</div>
+      <input type="radio" name="my_tabs_2" role="tab" class="tab" aria-label="万年筆を探す" checked />
+      <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6">Tab content 2</div>
+    </div>
+    <div class="my-8">
+      <h1 class="text-lg font-bold my-4">万年筆とインクの管理を簡単に！</h1>
+      <p class="text-left leading-7">
+        インクコレクションは、自分の持っている万年筆やインクを管理したり、
+        みんなの万年筆やインクを検索して気になるものを見つけることができるWebアプリです。
+      </p>
+    </div>
+    <div class="my-8">
+      <h2 class="text-lg font-bold my-4">こんなことありませんか？？</h2>
+      <p class="text-left leading-7">
+        今、どの万年筆にどのインクを入れていたっけ…？
+      </p>
+      <p class="text-left leading-7">
+        どんなインクを持ってたっけ…？残りどれくらいだっけ…？
+      </p>
+      <p class="text-left leading-7">
+        新しいインク買いたい！万年筆買いたい！どんなのがいいんだろう…？
+      </p>
+    </div>
+    <div class="my-8">
+      <h2 class="text-lg font-bold my-4">インクコレクションでできること</h2>
+      <p class="text-left leading-7">
+        投稿されている万年筆やインクの情報を検索し、一覧で見ることができます。
+      </p>
+      <p class="font-medium">実際の一覧画面のスクショ画像</p>
+    </div>
+    <div class="my-8">
+      <h2 class="font-bold my-4">ログインするとさらに！</h2>
+      <p class="text-left leading-7">
+        自分の持っている万年筆とインクを登録でき、今使っている万年筆にどのインクが入っているかを紐づけて管理することができます。
+      </p>
+      <p class="font-medium">マイページ画面のスクショ画像</p>
+    </div>
+    <div class="my-8">
+      <h2 class="font-bold">ログインして使ってみる</h2>
+      <div>
+        <button class="text-lg btn btn-primary">Login</button>
+      </div>
+    </div>
+    <h2 class="font-bold">万年筆とインクを探してみる</h2>
+    <div class="text-left leading-7">
+      <div class="my-4">
+        <h3 class="font-bold">メーカーから万年筆を探す</h3>
+        <h4 class="font-medium">国内</h4>
+        <div>
+          <a href="#">パイロット</a><a href="#">セーラー</a><a href="#">プラチナ</a>
+        </div>
+        <h4 class="font-medium">海外</h4>
+        <div>
+          <a href="#">アウロラ</a><a href="#">モンブラン</a><a href="#">ペリカン</a>
+        </div>        
+      </div>
+      <div class="my-4">
+        <h3 class="font-bold">メーカーからインクを探す</h3>
+        <h4 class="font-medium">国内</h4>
+        <div>
+          <a href="#">パイロット</a><a href="#">セーラー</a><a href="#">プラチナ</a>
+        </div>
+        <h4 class="font-medium">国内</h4>
+        <div>
+          <a href="#">アウロラ</a><a href="#">モンブラン</a><a href="#">ペリカン</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
