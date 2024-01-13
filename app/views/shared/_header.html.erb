@@ -1,26 +1,35 @@
 <header>
-  <div class="navbar bg-base-100 bg-gradient-to-r from-blue-200 to-purple-200">
-    <div class="navbar-start">
-      <button class="btn btn-ghost btn-circle">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-      </button>
-    </div>
-    <div class="navbar-center w-1/2">
-      <%= link_to root_path do %>
-        <%= image_tag 'headerlogo_b.png' %>
-      <% end %>
-    </div>
-    <div class="navbar-end">
-      <div class="dropdown dropdown-left">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
+  <div class="drawer drawer-end">
+    <input id="my-drawer-3" type="checkbox" class="drawer-toggle" /> 
+    <div class="drawer-content flex flex-col">
+      <!-- Navbar -->
+      <div class="w-full navbar bg-base-100 bg-gradient-to-r from-blue-200 to-purple-200">
+        <div class="flex-1 px-2 mx-2">          
+          <%= link_to root_path do %>
+            <%= image_tag 'headerlogo_b.png', class: 'max-h-16' %>
+          <% end %>
         </div>
-        <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-          <li><a>Homepage</a></li>
-          <li><a>Portfolio</a></li>
-          <li><a>About</a></li>
-        </ul>
+        <div class="flex-none lg:hidden">
+          <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </label>
+        </div> 
+        <div class="flex-none hidden lg:block">
+          <ul class="menu menu-horizontal">
+            <!-- Navbar menu content here -->
+            <li><a>Navbar Item 1</a></li>
+            <li><a>Navbar Item 2</a></li>
+          </ul>
+        </div>
       </div>
+    </div> 
+    <div class="drawer-side z-10">
+      <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label> 
+      <ul class="menu p-4 w-80 min-h-full bg-base-200">
+        <!-- Sidebar content here -->
+        <li><a>Sidebar Item 1</a></li>
+        <li><a>Sidebar Item 2</a></li>
+      </ul>
     </div>
   </div>
 </header>
