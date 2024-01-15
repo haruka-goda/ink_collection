@@ -9,4 +9,6 @@ class StaticPagesController < ApplicationController
   end
   def mypageedit
   end
+  def result
+  end
 end
