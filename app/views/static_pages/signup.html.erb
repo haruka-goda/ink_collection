@@ -1,0 +1,45 @@
+<div class="flex justify-center mx-auto w-4/5 max-w-screen-sm">
+  <div class='text-center w-full'>
+    <div class=" mx-auto w-full border-dotted border-b-4 border-purple-200">
+      <h1 class="w-full text-lg font-bold my-10 border-dotted border-b-4 border-purple-200 sm:text-2xl">新規登録</h1>
+      
+      <label class="form-control mb-5">
+        <div class="label">
+          <span class="label-text">Name</span>
+        </div>
+        <input type="text" placeholder="ユーザー名を入力してください" class="input border-purple-200" />
+      </label>
+
+      <label class="form-control mb-5">
+        <div class="label">
+          <span class="label-text">Email</span>
+        </div>
+        <input type="text" placeholder="メールアドレスを入力してください" class="input border-purple-200" />
+      </label>
+      <label class="form-control mb-8">
+        <div class="label">
+          <span class="label-text">Password</span>
+        </div>
+        <input type="text" placeholder="パスワードを入力してください" class="input border-purple-200" />
+      </label>
+      <label class="form-control mb-5">
+        <div class="label">
+          <span class="label-text">Confirm Password</span>
+        </div>
+        <input type="text" placeholder="パスワードをもう一度入力してください" class="input border-purple-200" />
+      </label>
+      <div class="form-group" data-controller="avatar-preview">
+        <div class="text-left text-sm">Avatar</div>
+        <div class='mt-2 mb-3'>
+            <%= image_tag 'avatar.png', 
+                          id: 'preview', 
+                          class: 'w-24 h-24 rounded-full object-cover', 
+                          data: { "avatar-preview-target" => "preview" } %>
+        </div>
+      </div>
+
+      <div class="my-10"><%= link_to "Create", root_path, class: "block p-3 bg-primary font-bold rounded-full hover:opacity-80" %></div>
+    </div>
+    <div class="my-10"><%= link_to "会員登録済の方はこちら", root_path, class: "block p-3 w-full bg-secondary rounded-full hover:opacity-80 font-medium" %></div>
+  </div>
+</div>
