@@ -3,13 +3,15 @@
     <div class=" mx-auto my-20 w-full my-4">  
       <div class="card lg:card-side bg-base-100 shadow-xl my-10">
         <figure>
-          <%= image_tag 'avatar.png', class: 'rounded-full h-24 mt-6 lg:ml-10  lg:my-auto' %>
+          <%= image_tag 'avatar.png', class: 'rounded-full h-24 mt-6 lg:ml-10 lg:h-32 lg:my-auto' %>
         </figure>
         <div class="card-body">
           <h2 class="card-title justify-center">ルカあいうえおかきく</h2>
           <p>sample@sample.com</p>
-          <div class="card-actions justify-center lg:justify-end">
-            <button class="btn btn-primary">編集</button>
+          <div class="card-actions justify-center">
+            <div class="my-4">
+              <%= link_to "編集", root_path, class: "text-sm block px-5 py-4 bg-primary hover:opacity-80 rounded-full" %>
+            </div>
           </div>
         </div>
       </div>

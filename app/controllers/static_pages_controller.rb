@@ -7,4 +7,6 @@ class StaticPagesController < ApplicationController
   end
   def mypage
   end
+  def mypageedit
+  end
 end
