@@ -1,0 +1,21 @@
+<div class="flex justify-center mx-auto w-4/5 max-w-screen-sm">
+  <div class='text-center w-full'>
+    <div class=" mx-auto w-full border-dotted border-b-4 border-purple-200">
+      <h1 class="w-full text-lg font-bold my-10 border-dotted border-b-4 border-purple-200 sm:text-2xl">ログイン</h1>
+      <label class="form-control mb-5">
+        <div class="label">
+          <span class="label-text">Email</span>
+        </div>
+        <input type="text" placeholder="メールアドレスを入力してください" class="input border-purple-200" />
+      </label>
+      <label class="form-control mb-8">
+        <div class="label">
+          <span class="label-text">Password</span>
+        </div>
+        <input type="text" placeholder="パスワードを入力してください" class="input border-purple-200" />
+      </label>
+      <div class="my-10"><%= link_to "Login", root_path, class: "block p-3 bg-primary font-bold rounded-full hover:opacity-80" %></div>
+    </div>
+    <div class="my-10"><%= link_to "新規登録の方はこちら", root_path, class: "block p-3 w-full bg-secondary rounded-full hover:opacity-80 font-medium" %></div>
+  </div>
+</div>
