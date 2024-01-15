@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get 'static_pages/mypage'
   get 'static_pages/mypageedit'
   get 'static_pages/result'
+  get 'static_pages/inkshow'
+  get 'static_pages/inkedit'
 end
