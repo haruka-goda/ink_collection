@@ -1,1 +1,100 @@
-<div>aiueo</div>
+<div class="flex justify-center mx-auto">
+  <div class='text-center max-w-lg'>
+    <%= image_tag('logo.jpg')%>
+    <div role="tablist" class="tabs tabs-lifted w-4/5 mx-auto">
+      <input type="radio" name="my_tabs_2" role="tab" class="tab font-bold" aria-label="インクを探す" checked />
+      <div role="tabpanel" class="tab-content bg-blue-100 border-base-300 rounded-box p-6">
+        <input type="text" placeholder="Type here" class="input input-bordered input-info w-full max-w-xs" /> 
+      </div>
+      <input type="radio" name="my_tabs_2" role="tab" class="tab font-bold" aria-label="万年筆を探す" />
+      <div role="tabpanel" class="tab-content bg-purple-100 border-base-300 rounded-box p-6">
+        <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs" />
+      </div>
+    </div>
+    <div class="w-4/5 mx-auto my-20">
+      <h1 class="text-lg font-bold my-4 border-dotted border-b-4 border-purple-200">万年筆とインクの管理を簡単に！</h1>
+      <p class="text-left leading-7">
+        インクコレクションは、自分の持っている万年筆やインクを管理したり、
+        みんなの万年筆やインクを検索して気になるものを見つけることができるWebアプリです。
+      </p>
+    </div>
+    <div class="w-4/5 mx-auto my-20">
+      <h2 class="text-lg font-bold my-4 border-dotted border-b-4 border-purple-200">こんなことありませんか？？</h2>
+      <div class="chat chat-start">
+        <div class="chat-bubble chat-bubble-primary text-left">今、どの万年筆にどのインクを入れていたっけ…？</div>
+      </div>
+      <div class="chat chat-end">
+        <div class="chat-bubble chat-bubble-secondary text-left">どんなインクを持ってたっけ…？残りどれくらいだっけ…？</div>
+      </div>
+      <div class="chat chat-start">
+        <div class="chat-bubble chat-bubble-primary text-left">新しいインク買いたい！万年筆買いたい！<br>
+        でもどんなのがいいんだろう…？</div>
+      </div>
+    </div>
+    <div class="w-4/5 mx-auto ">
+      <h2 class="text-lg font-bold my-4 border-dotted border-b-4 border-purple-200">そんなあなたに！！</h2>
+      <div class="card bg-base-100 shadow-xl mx-auto my-4">
+        <div class="card-body text-left">
+          <h2 class="card-title">インクコレクションでできること</h2>
+          <p>投稿されている万年筆やインクの情報を検索し、一覧で見ることができます。</p>
+        </div>
+        <%= image_tag('dummy.png', class: 'w-full') %>
+      </div>
+    </div>
+    <div class="w-4/5 mx-auto ">
+      <div class="card bg-base-100 shadow-xl mx-auto my-4">
+        <div class="card-body text-left">
+          <h2 class="card-title">ログインするとさらに！</h2>
+          <p>自分の持っている万年筆とインクを登録できます。また、今使っている万年筆にどのインクが入っているかを紐づけて、管理することができます</p>
+        </div>
+        <%= image_tag('dummy.png', class: 'w-full') %>
+      </div>
+    </div>
+    <div class="w-4/5 mx-auto my-20">
+      <h2 class="text-lg font-bold my-4 border-dotted border-b-4 border-purple-200">自分の万年筆とインクの管理をする</h2>
+      <div class="mx-auto my-8 card bg-primary text-primary-content shadow-xl">
+        <div class="card-body">
+          <p class="font-bold my-4"><span class="pb-2 border-dotted border-b-2 border-white">ログインして使う！</span></p>
+          <div class="card-actions justify-center">
+            <button class="btn">Login</button>
+          </div>
+          <p class="font-bold my-4"><span class="pb-2 border-dotted border-b-2 border-white">初めての方はこちらから！</span></p>
+          <div class="card-actions justify-center">
+            <button class="btn">Sign up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-4/5 mx-auto my-20">
+      <h2 class="text-lg font-bold my-4 border-dotted border-b-4 border-purple-200">みんなの万年筆とインクを探してみる</h2>
+      <div class="mx-auto my-8 card bg-purple-100 text-primary-content shadow-xl">
+        <div class="card-body text-left leading-7">   
+          <h3 class="card-title mb-2 border-dotted border-b-4 border-white">メーカーから万年筆を探す</h3>
+          <h4 class="font-medium">国内</h4>
+          <div>
+            <a href="#">パイロット</a><a href="#">セーラー</a><a href="#">プラチナ</a>
+          </div>
+          <h4 class="font-medium">海外</h4>
+          <div>
+            <a href="#">アウロラ</a><a href="#">モンブラン</a><a href="#">ペリカン</a>
+          </div>
+        </div>
+      </div>
+      <div class="mx-auto my-8 card bg-blue-100 text-primary-content shadow-xl">
+        <div class="card-body text-left leading-7">   
+          <h3 class="card-title mb-2 border-dotted border-b-4 border-white">メーカーからインクを探す</h3>
+          <h4 class="font-medium">国内</h4>
+          <div>
+            <a href="#">パイロット</a><a href="#">セーラー</a><a href="#">プラチナ</a>
+          </div>
+          <h4 class="font-medium">海外</h4>
+          <div>
+            <a href="#">アウロラ</a><a href="#">モンブラン</a><a href="#">ペリカン</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
