@@ -11,4 +11,8 @@ class StaticPagesController < ApplicationController
   end
   def result
   end
+  def inkshow
+  end
+  def inkedit
+  end
 end

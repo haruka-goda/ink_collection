@@ -1,0 +1,42 @@
+<div class="flex justify-center mx-auto">
+  <div class='text-left w-4/5'>
+    <div class=" mx-auto my-20 w-full my-4">
+      <div class="card md:card-side bg-base-100 shadow-xl w-full">
+
+        <div class="mt-6 mx-6 lg:m-10 lg:w-1/2">
+          <%= image_tag 'logo.jpg', class: 'mb-6' %>
+          <div class="flex justify-between">
+            <button class="btn btn-sm">＜ Prev</button>
+            <button class="btn btn-sm">Next ＞</button>
+          </div>
+        </div>     
+      
+        <div class="card-body lg:w-1/2">
+          <div class="flex flex-col justify-between h-full">
+            <div class="">
+              <p class="text-sm mb-4 lg:my-4">MONTBLANC</p>
+              <h2 class="card-title">マイスターシュテュック ゴールドコーティング</h2>
+              <p class="text-sm my-4">ニブS</p>
+              <p class="text-xs my-4">購入日</p>
+              <p class="my-4">めちゃくちゃかわいい！！！テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            </div>
+
+            <!-- 他人の詳細画面の場合は以下の状態、自分の場合は編集ボタンにする -->
+            <div class="flex justify-between">
+              <div class="flex items-center">
+                <%= image_tag 'avatar.png', class: 'h-12' %>
+                <p class="ml-2 text-xs lg:text-base">Posted by ルカ</p>              
+              </div>
+
+              <div class="">
+                <button class="btn btn-primary">♡</button>
+              </div>            
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
