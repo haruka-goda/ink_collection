@@ -15,4 +15,6 @@ class StaticPagesController < ApplicationController
   end
   def inkedit
   end
+  def pencase
+  end
 end
