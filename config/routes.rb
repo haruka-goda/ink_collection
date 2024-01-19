@@ -5,10 +5,8 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
   
-  resources :users, only: %i[new create]  
+  resources :users, only: %i[new create]
 
-  get 'static_pages/login'
-  get 'static_pages/signup'
   get 'static_pages/mypage'
   get 'static_pages/mypageedit'
   get 'static_pages/result'
