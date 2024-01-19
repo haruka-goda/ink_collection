@@ -3,43 +3,42 @@
     <div class=" mx-auto w-full border-dotted border-b-4 border-purple-200">
       <h1 class="w-full text-lg font-bold my-10 border-dotted border-b-4 border-purple-200 sm:text-2xl">新規登録</h1>
       
-      <label class="form-control mb-5">
-        <div class="label">
-          <span class="label-text">Name</span>
+      <%= form_with model: @user, local: true, class: "space-y-5 mb-8" do |f| %>
+        <div class="form-control mb-5">
+          <%= f.label :name, class: "label" do %>
+            <span class="label-text">Name</span>
+          <% end %>
+          <%= f.text_field :name, class: 'input border-purple-200', placeholder: 'ユーザー名を入力してください' %>
         </div>
-        <input type="text" placeholder="ユーザー名を入力してください" class="input border-purple-200" />
-      </label>
+        
+        <div class="form-control mb-5">
+          <%= f.label :email, class: "label" do %>
+            <span class="label-text">Email</span>
+          <% end %>
+          <%= f.email_field :email, class: 'input border-purple-200', placeholder: 'メールアドレスを入力してください' %>
+        </div>
+        
+        <div class="form-control mb-5">
+          <%= f.label :password, class: "label" do %>
+            <span class="label-text">Password</span>
+          <% end %>
+          <%= f.password_field :password, class: 'input border-purple-200', placeholder: 'パスワードを入力してください' %>
+        </div>
+        
+        <div class="form-control mb-5">
+          <%= f.label :password_confirmation, class: "label" do %>
+            <span class="label-text">Confirm Password</span>
+          <% end %>
+          <%= f.password_field :password_confirmation, class: 'input border-purple-200', placeholder: 'パスワードをもう一度入力してください' %>
+        </div>
 
-      <label class="form-control mb-5">
-        <div class="label">
-          <span class="label-text">Email</span>
+        <div class="pt-5">
+          <%= f.submit 'Create', class: 'block bg-primary font-bold rounded-full p-3 hover:opacity-80 w-full' %>
         </div>
-        <input type="text" placeholder="メールアドレスを入力してください" class="input border-purple-200" />
-      </label>
-      <label class="form-control mb-8">
-        <div class="label">
-          <span class="label-text">Password</span>
-        </div>
-        <input type="text" placeholder="パスワードを入力してください" class="input border-purple-200" />
-      </label>
-      <label class="form-control mb-5">
-        <div class="label">
-          <span class="label-text">Confirm Password</span>
-        </div>
-        <input type="text" placeholder="パスワードをもう一度入力してください" class="input border-purple-200" />
-      </label>
-      <div class="form-group" data-controller="avatar-preview">
-        <div class="text-left text-sm">Avatar</div>
-        <div class='mt-2 mb-3'>
-            <%= image_tag 'avatar.png', 
-                          id: 'preview', 
-                          class: 'w-24 h-24 rounded-full object-cover', 
-                          data: { "avatar-preview-target" => "preview" } %>
-        </div>
-      </div>
-
-      <div class="my-10"><%= link_to "Create", root_path, class: "block p-3 bg-primary font-bold rounded-full hover:opacity-80" %></div>
+        
+      <% end %>
+      
     </div>
-    <div class="my-10"><%= link_to "会員登録済の方はこちら", root_path, class: "block p-3 w-full bg-secondary rounded-full hover:opacity-80 font-medium" %></div>
+    <div class="mt-8 mb-12"><%= link_to "会員登録済の方はこちら", login_path, class: "block p-3 w-full bg-secondary rounded-full hover:opacity-80 font-medium" %></div>
   </div>
 </div>
