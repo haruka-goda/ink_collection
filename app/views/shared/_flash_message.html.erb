@@ -1,0 +1,12 @@
+<% flash.each do |type, message| %>
+  <% case type %>
+  <% when 'success' %>
+    <div class="rounded-md bg-green-50 p-4 text-sm text-green-500 animate-fadeInOutw-full"><b>Success:</b> <%= message %></div>
+  <% when 'error' %>
+    <div class="rounded-md bg-red-50 p-4 text-sm text-red-500 animate-fadeInOut w-full"><b>Error:</b> <%= message %></div>
+  <% when 'info' %>
+    <div class="rounded-md bg-primary-50 p-4 text-sm text-primary-500 animate-fadeInOut w-full"><b>Info:</b> <%= message %></div>
+  <% when 'warning' %>
+    <div class="rounded-md bg-yellow-50 p-4 text-sm text-yellow-500 animate-fadeInOut w-full"><b>Warning:</b> <%= message %></div>
+  <% end %>
+<% end %>
