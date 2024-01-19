@@ -59,6 +59,10 @@
           </div>
         </div>        
       </div>
+      <div data-target="target">
+        <button class="text-sm px-5 py-4 mb-10 bg-primary hover:opacity-80 rounded-full font-medium">削除</button>
+      </div>
+
       <div class="rounded-2xl shadow-xl my-4 bg-base-100">
         <div class="flex">
           <div class="w-3/12">
@@ -108,8 +112,11 @@
         ※同じ万年筆に新しいインクを入れると上書きされます</p>
       </div>
       <div class="mt-8">
-        <%= link_to "− 万年筆を洗う", root_path, class: "text-sm block px-5 py-4 bg-blue-100 hover:opacity-80 rounded-full font-medium outline outline-2 outline-offset-4 outline-blue-100" %>
+        <button data-action="click->toggle" class="text-sm block w-full py-4 bg-blue-100 hover:opacity-80 rounded-full font-medium outline outline-2 outline-offset-4 outline-blue-100">
+          ー　組み合わせを削除する
+        </button>
       </div>
+
 
       
       <div class="my-16">
