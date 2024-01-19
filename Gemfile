@@ -60,6 +60,7 @@ end
 
 gem 'sorcery'
 gem 'pry-byebug'
+gem 'rails-i18n'
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
