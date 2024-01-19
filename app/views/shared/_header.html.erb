@@ -16,19 +16,7 @@
           </label>
         </div>
 
-        <%# 未ログイン時のNavメニュー %>
-        <%#
-        <div class="flex-none hidden lg:block">
-          <ul class="menu menu-horizontal">
-            <!-- Navbar menu content here -->
-            <li><a>ログイン</a></li>
-            <li><a>新規登録</a></li>
-            <li><a>インクコレクションとは？</a></li>
-          </ul>
-        </div>
-        %>
-
-        <!-- ログイン時のナビゲーションメニュー -->
+        <!-- ナビゲーションメニュー -->
         <div class="flex-none hidden lg:block">
           <div class="flex items-center justify-center w-100">
             <div class="menu menu-horizontal">
@@ -59,7 +47,7 @@
                     <li><%= link_to "My Pen", root_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
                     <li><%= link_to "Favorites", root_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
                     <li class="border-dotted border-b-4 border-purple-200"> </li>
-                    <li><%= link_to "Logout", root_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
+                    <li><%= link_to "Logout", logout_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full", data: {turbo_method: :delete} %></li>
                   </ul>
                 </div>
               </div>
@@ -68,18 +56,6 @@
         </div>
       </div>
     </div> 
-
-    <%# 未ログイン時のサイドバー%>
-    <%#
-    <div class="drawer-side z-10">
-      <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label> 
-      <ul class="menu p-4 w-80 min-h-full bg-base-200">
-        <li><a>ログイン</a></li>
-        <li><a>新規登録</a></li>
-        <li><a>インクコレクションとは？</a></li>
-      </ul>
-    </div>
-    %>
 
     <div class="drawer-side z-10">
       <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label> 
@@ -101,7 +77,7 @@
           <li><%= link_to "Favorites", root_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>    
         </ul>
         <div class="mt-2">
-          <div><%= link_to "Logout", root_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></div>
+          <div><%= link_to "Logout", logout_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full", data: {turbo_method: :delete} %></div>
         </div>
       </div>
     </div>
