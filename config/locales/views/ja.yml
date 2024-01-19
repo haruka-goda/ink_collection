@@ -1,0 +1,18 @@
+ja:
+  defaults:
+    login: 'ログイン'
+    register: '新規登録'
+    logout: 'ログアウト'
+    about: 'インクコレクションとは？'
+  users:
+    new:
+      title: '新規登録'
+      to_login_page: '会員登録済の方はこちら'
+  user_sessions:
+    new:
+      title: 'ログイン'
+      to_register_page: '新規登録の方はこちら'
+      password_forget: 'パスワードをお忘れの方はこちら'
+  profiles:
+    show:
+      title: 'プロフィール'

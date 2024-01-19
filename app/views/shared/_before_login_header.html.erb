@@ -18,20 +18,20 @@
 
         <div class="flex-none hidden lg:block">
           <ul class="menu menu-horizontal">
-            <li><%= link_to "ログイン", login_path %></li>
-            <li><%= link_to "新規登録", new_user_path %></li>
-            <li><%= link_to "インクコレクションとは？", root_path(anchor: "about") %></li>
+            <li><%= link_to (t 'defaults.login'), login_path %></li>
+            <li><%= link_to (t 'defaults.register'), new_user_path %></li>
+            <li><%= link_to (t 'defaults.about'), root_path(anchor: "about") %></li>
           </ul>
         </div>
       </div>
-    </div> 
+    </div>
 
     <div class="drawer-side z-10">
       <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label> 
       <ul class="menu p-4 w-80 min-h-full bg-base-200">
-        <li><%= link_to "ログイン", login_path %></li>
-        <li><%= link_to "新規登録", new_user_path %></li>
-        <li><%= link_to "インクコレクションとは？", root_path(anchor: "about") %></li>
+        <li><%= link_to (t 'defaults.login'), login_path %></li>
+        <li><%= link_to (t 'defaults.register'), new_user_path %></li>
+        <li><%= link_to (t 'defaults.about'), root_path(anchor: "about") %></li>
       </ul>
     </div>
   </div>

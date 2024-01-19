@@ -1,7 +1,7 @@
 <div class="flex justify-center mx-auto w-4/5 max-w-screen-sm">
   <div class='text-center w-full'>
     <div class=" mx-auto w-full border-dotted border-b-4 border-purple-200">
-      <h1 class="w-full text-lg font-bold my-10 border-dotted border-b-4 border-purple-200 sm:text-2xl">新規登録</h1>
+      <h1 class="w-full text-lg font-bold my-10 border-dotted border-b-4 border-purple-200 sm:text-2xl"><%= t '.title' %></h1>
       
       <%= form_with model: @user, local: true, class: "space-y-5 mb-8" do |f| %>
         <div class="form-control mb-5">
@@ -39,6 +39,6 @@
       <% end %>
       
     </div>
-    <div class="mt-8 mb-12"><%= link_to "会員登録済の方はこちら", login_path, class: "block p-3 w-full bg-secondary rounded-full hover:opacity-80 font-medium" %></div>
+    <div class="mt-8 mb-12"><%= link_to (t '.to_login_page'), login_path, class: "block p-3 w-full bg-secondary rounded-full hover:opacity-80 font-medium" %></div>
   </div>
 </div>

@@ -1,7 +1,7 @@
 <div class="flex justify-center mx-auto w-4/5 max-w-screen-sm">
   <div class='text-center w-full'>
     <div class="mx-auto w-full border-dotted border-b-4 border-purple-200">
-      <h1 class="text-lg font-bold my-10 border-dotted border-b-4 border-purple-200 sm:text-2xl">ログイン</h1>
+      <h1 class="text-lg font-bold my-10 border-dotted border-b-4 border-purple-200 sm:text-2xl"><%= t '.title' %></h1>
       <%= form_with url: login_path, local: true do |f| %>
         <div class="form-control mb-5">
           <%= f.label :email, class: "label" do %>
@@ -21,7 +21,7 @@
       <% end %>
     </div>
     <div class='mt-8 mb-12 text-center'>
-      <%= link_to '新規登録の方はこちら', new_user_path, class: "block p-3 w-full bg-secondary rounded-full hover:opacity-80 font-medium" %>
+      <%= link_to (t '.to_register_page'), new_user_path, class: "block p-3 w-full bg-secondary rounded-full hover:opacity-80 font-medium" %>
     </div>
   </div>
 </div>
