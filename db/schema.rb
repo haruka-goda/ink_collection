@@ -10,9 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_19_091633) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_20_024144) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "inks", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "brand", null: false
+    t.string "color"
+    t.integer "ink_level"
+    t.date "purchase_date"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_inks_on_user_id"
+  end
+
+  create_table "pens", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "brand", null: false
+    t.string "nib"
+    t.date "purchase_date"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_pens_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
@@ -24,4 +49,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_19_091633) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "inks", "users"
+  add_foreign_key "pens", "users"
 end
