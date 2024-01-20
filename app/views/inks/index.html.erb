@@ -1,0 +1,23 @@
+<div class="flex justify-center mx-auto w-4/5 max-w-lg">
+  <div class='text-center'>
+    <div class=" mx-auto my-8 sm:my-20 w-full">
+      <h1 class="w-full text-lg sm:text-2xl font-bold my-10 border-dotted border-b-4 border-purple-200">Ink</h1>
+
+      <% if @inks.present? %>
+        <%= render partial: 'shared/product_card', collection: @inks, as: :product %>
+      <% else %>
+        <p>見つかりませんでした</p>
+      <% end %>
+
+      <div class="my-8 sm:mt-16">
+        <div class="join border">
+          <button class="join-item btn">1</button>
+          <button class="join-item btn btn-active">2</button>
+          <button class="join-item btn">3</button>
+          <button class="join-item btn">4</button>
+        </div>      
+      </div>
+
+    </div>
+  </div>
+</div>
