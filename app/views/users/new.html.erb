@@ -3,6 +3,7 @@
     <div class="mx-auto w-full border-dotted border-b-4 border-purple-200">
       <h1 class="w-full text-lg font-bold my-10 border-dotted border-b-4 border-purple-200 sm:text-2xl"><%= t '.title' %></h1>
       <%= form_with model: @user, local: true, class: "space-y-5 mb-8" do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
         <div class="form-control mb-5">
           <%= f.label :name, class: "label" do %>
             <span class="label-text">Name</span>
