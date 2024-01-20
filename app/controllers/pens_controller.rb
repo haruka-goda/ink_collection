@@ -13,7 +13,7 @@ class PensController < ApplicationController
       redirect_to pens_path, success: t('defaults.message.created', item: Pen.model_name.human)
     else
       flash.now['error'] = t('defaults.message.not_created', item: Pen.model_name.human)
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

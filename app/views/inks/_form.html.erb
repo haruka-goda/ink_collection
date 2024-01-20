@@ -4,6 +4,7 @@
 </div>
 
 <%= form_with model: ink, local: true, class: "space-y-5" do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
   <label class="form-control mb-5">
     <div class="label">
       <%= f.label :brand, class: "label-text" %>

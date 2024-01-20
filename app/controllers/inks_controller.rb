@@ -13,7 +13,7 @@ class InksController < ApplicationController
       redirect_to inks_path, success: t('defaults.message.created', item: Ink.model_name.human)
     else
       flash.now['error'] = t('defaults.message.not_created', item: Ink.model_name.human)
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
