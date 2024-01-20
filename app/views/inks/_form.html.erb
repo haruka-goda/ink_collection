@@ -1,0 +1,46 @@
+<div class="flex items-center flex-col mb-6">
+  <%= image_tag 'logo.jpg', class: ' my-auto mb-6 border' %>
+  <button class="btn btn-primary">画像選択</button>
+</div>
+
+<%= form_with model: ink, local: true, class: "space-y-5" do |f| %>
+  <label class="form-control mb-5">
+    <div class="label">
+      <%= f.label :brand, class: "label-text" %>
+    </div>
+    <%= f.select :brand, ['パイロット', 'セーラー', 'プラチナ'], { include_blank: 'メーカー名' }, { class: 'select select-bordered w-full' } %>
+  </label>
+
+  <label class="form-control mb-5">
+    <div class="label">
+      <%= f.label :name, class: "label-text" %>
+    </div>
+    <%= f.text_field :name, class: 'input input-bordered w-full', placeholder: "インクの名前" %>
+  </label> 
+
+  <label class="form-control mb-5">
+    <div class="label">
+      <%= f.label :color, class: "label-text" %>
+    </div>
+    <%= f.select :color, ['黒', 'ブルーブラック', '青'], { include_blank: '色' }, { class: 'select select-bordered w-full' } %>
+  </label>
+  
+  <label class="form-control mb-5">
+    <div class="label">
+      <%= f.label :purchase_date, class: "label-text" %>
+    </div>
+    <%= f.date_field :purchase_date, class: 'input input-bordered w-full', placeholder: "購入日" %>
+  </label>
+
+  <label class="form-control mb-14">
+    <div class="label">
+      <%= f.label :description, class: "label-text" %>
+    </div>
+    <%= f.text_area :description, class: 'textarea textarea-bordered h-24', placeholder: "感想などご自由に！" %>
+  </label>
+
+  <div class="pt-8">
+    <%= f.submit "投稿", class: 'btn btn-primary w-full' %>
+  </div>
+  
+<% end %>
