@@ -9,8 +9,6 @@ class StaticPagesController < ApplicationController
   end
   def mypageedit
   end
-  def result
-  end
   def inkshow
   end
   def inkedit
