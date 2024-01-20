@@ -47,7 +47,7 @@
                     <li><%= link_to "My Pen", root_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
                     <li><%= link_to "Favorites", root_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
                     <li class="border-dotted border-b-4 border-purple-200"> </li>
-                    <li><%= link_to "Logout", logout_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full", data: {turbo_method: :delete} %></li>
+                    <li><%= link_to "Logout", logout_path, data: {turbo_method: :delete}, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
                   </ul>
                 </div>
               </div>
