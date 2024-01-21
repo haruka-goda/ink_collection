@@ -21,7 +21,7 @@
               <p class="text-sm my-4"><%= @ink.color %></p>
               <p class="text-sm my-4"><%= @ink.ink_level %></p>
               <p class="text-xs my-4"><%= @ink.purchase_date %></p>
-              <p class="my-4"><%= @ink.description %></p>
+              <p class="my-4 break-all"><%= @ink.description %></p>
             </div>
             
             <% if current_user.own?(@ink) %>

@@ -20,7 +20,7 @@
               <h2 class="card-title"><%= @pen.name %></h2>
               <p class="text-sm my-4"><%= @pen.nib %></p>
               <p class="text-xs my-4"><%= @pen.purchase_date %></p>
-              <p class="my-4"><%= @pen.description %></p>
+              <p class="my-4 break-all"><%= @pen.description %></p>
             </div>
             
             <% if current_user.own?(@pen) %>
