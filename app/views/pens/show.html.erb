@@ -1,0 +1,55 @@
+<div class="flex justify-center mx-auto">
+  <div class='text-left w-4/5'>
+    <div class=" mx-auto my-20 w-full my-4">
+      <div class="card md:card-side bg-base-100 shadow-xl w-full">
+
+        <div class="md:w-1/2">
+          <div class="mt-6 mx-6 md:m-10">
+            <%= image_tag 'logo.jpg', class: 'mb-6' %>
+            <div class="flex justify-between">
+              <button class="btn btn-sm">＜ Prev</button>
+              <button class="btn btn-sm">Next ＞</button>
+          </div>
+          </div>
+        </div>     
+      
+        <div class="card-body md:w-1/2">
+          <div class="flex flex-col justify-between h-full">
+            <div class="">
+              <p class="text-sm mb-4 lg:my-4"><%= @pen.brand %></p>
+              <h2 class="card-title"><%= @pen.name %></h2>
+              <p class="text-sm my-4"><%= @pen.nib %></p>
+              <p class="text-xs my-4"><%= @pen.purchase_date %></p>
+              <p class="my-4 break-all"><%= @pen.description %></p>
+            </div>
+            
+            <% if current_user.own?(@pen) %>
+              <div class="flex justify-between">
+                <div class="">
+                  <button class="btn btn-primary">インクを入れる</button>                  
+                </div>
+                <div class="">
+                  <button class="btn btn-primary">編集</button>
+                </div>            
+              </div>
+            <% else %>
+              <div class="flex justify-between">
+                <div class="flex items-center">
+                  <%= image_tag 'avatar.png', class: 'h-12' %>
+                  <p class="mx-2 text-xs lg:text-base">Posted by</p>
+                  <%= @pen.user.name %>
+                </div>
+
+                <div class="">
+                  <button class="btn btn-primary">♡</button>
+                </div>            
+              </div>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

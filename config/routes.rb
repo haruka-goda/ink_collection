@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
   
   resources :users, only: %i[new create]
-  resources :pens, only: %i[index new create]
-  resources :inks, only: %i[index new create]
+  resources :pens, only: %i[index new create show]
+  resources :inks, only: %i[index new create show]
 
   get 'static_pages/mypage'
   get 'static_pages/mypageedit'
