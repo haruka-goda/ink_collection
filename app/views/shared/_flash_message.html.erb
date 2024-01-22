@@ -1,0 +1,12 @@
+<% flash.each do |type, message| %>
+  <% case type %>
+  <% when 'success' %>
+    <div class="bg-green-50 p-4 text-sm text-green-500"><b>Success:</b> <%= message %></div>
+  <% when 'error' %>
+    <div class="bg-red-50 p-4 text-sm text-red-500"><b>Error:</b> <%= message %></div>
+  <% when 'info' %>
+    <div class="bg-primary-50 p-4 text-sm text-primary-500"><b>Info:</b> <%= message %></div>
+  <% when 'warning' %>
+    <div class="bg-yellow-50 p-4 text-sm text-yellow-500"><b>Warning:</b> <%= message %></div>
+  <% end %>
+<% end %>
