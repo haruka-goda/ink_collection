@@ -4,10 +4,16 @@ ja:
     register: '新規登録'
     logout: 'ログアウト'
     about: 'インクコレクションとは？'
+    edit: '編集'
+    delete: '削除'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
       not_created: "%{item}を作成できませんでした"
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新できませんでした"
+      deleted: "%{item}を削除しました"
+      delete_confirm: '本当に削除しますか？'
   users:
     new:
       title: '新規登録'
