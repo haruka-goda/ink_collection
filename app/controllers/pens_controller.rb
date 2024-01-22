@@ -29,7 +29,7 @@ class PensController < ApplicationController
     if @pen.update(pen_params)
       redirect_to @pen, success: t('defaults.message.updated', item: Pen.model_name.human)
     else
-      flash.now['danger'] = t('defaults.message.not_updated', item: Pen.model_name.human)
+      flash.now['error'] = t('defaults.message.not_updated', item: Pen.model_name.human)
       render :edit, status: :unprocessable_entity
     end
   end

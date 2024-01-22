@@ -29,7 +29,7 @@ class InksController < ApplicationController
     if @ink.update(ink_params)
       redirect_to @ink, success: t('defaults.message.updated', item: Ink.model_name.human)
     else
-      flash.now['danger'] = t('defaults.message.not_updated', item: Ink.model_name.human)
+      flash.now['error'] = t('defaults.message.not_updated', item: Ink.model_name.human)
       render :edit, status: :unprocessable_entity
     end
   end
