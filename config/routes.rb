@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   resources :pens
   resources :inks
+  resource :mypage, only: %i[show edit update]
 
   get 'static_pages/mypage'
   get 'static_pages/mypageedit'
