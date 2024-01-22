@@ -1,24 +1,24 @@
-<div class="flex justify-center mx-auto">
+<div class="flex justify-center mx-auto w-5/6">
   <div class='text-center max-w-lg'>
     <%= image_tag('logo.jpg')%>
-    <div role="tablist" class="tabs tabs-lifted w-4/5 mx-auto">
+    <div role="tablist" class="tabs tabs-lifted w-full">
       <input type="radio" name="my_tabs_2" role="tab" class="tab font-bold" aria-label="インクを探す" checked />
       <div role="tabpanel" class="tab-content bg-blue-100 border-base-300 rounded-box p-6">
-        <input type="text" placeholder="Type here" class="input input-bordered input-info w-full max-w-xs" /> 
+        <input type="text" placeholder="Type here" class="input input-bordered input-info w-full" /> 
       </div>
       <input type="radio" name="my_tabs_2" role="tab" class="tab font-bold" aria-label="万年筆を探す" />
       <div role="tabpanel" class="tab-content bg-purple-100 border-base-300 rounded-box p-6">
-        <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full max-w-xs" />
+        <input type="text" placeholder="Type here" class="input input-bordered input-primary w-full" />
       </div>
     </div>
-    <div class="w-4/5 mx-auto my-20">
+    <div class="my-20">
       <h1 class="text-lg font-bold my-4 border-dotted border-b-4 border-purple-200">万年筆とインクの管理を簡単に！</h1>
       <p class="text-left leading-7">
         インクコレクションは、自分の持っている万年筆やインクを管理したり、
         みんなの万年筆やインクを検索して気になるものを見つけることができるWebアプリです。
       </p>
     </div>
-    <div class="w-4/5 mx-auto my-20">
+    <div class="my-20">
       <h2 class="text-lg font-bold my-4 border-dotted border-b-4 border-purple-200">こんなことありませんか？？</h2>
       <div class="chat chat-start">
         <div class="chat-bubble chat-bubble-primary text-left">今、どの万年筆にどのインクを入れていたっけ…？</div>
@@ -31,7 +31,7 @@
         でもどんなのがいいんだろう…？</div>
       </div>
     </div>
-    <div class="w-4/5 mx-auto ">
+    <div>
       <h2 class="text-lg font-bold my-4 border-dotted border-b-4 border-purple-200">そんなあなたに！！</h2>
       <div class="card bg-base-100 shadow-xl mx-auto my-4">
         <div class="card-body text-left">
@@ -41,7 +41,7 @@
         <%= image_tag('dummy.png', class: 'w-full') %>
       </div>
     </div>
-    <div class="w-4/5 mx-auto ">
+    <div class="mx-auto">
       <div class="card bg-base-100 shadow-xl mx-auto my-4">
         <div class="card-body text-left">
           <h2 class="card-title">ログインするとさらに！</h2>
@@ -50,22 +50,38 @@
         <%= image_tag('dummy.png', class: 'w-full') %>
       </div>
     </div>
-    <div class="w-4/5 mx-auto my-20">
+    <div class="my-20">
       <h2 class="text-lg font-bold my-4 border-dotted border-b-4 border-purple-200">自分の万年筆とインクの管理をする</h2>
-      <div class="mx-auto my-8 card bg-primary text-primary-content shadow-xl">
+      <div class="mx-auto my-8 card bg-pink-50 text-primary-content shadow-xl">
         <div class="card-body">
-          <p class="font-bold my-4"><span class="pb-2 border-dotted border-b-2 border-white">ログインして使う！</span></p>
+          <p class="font-bold my-4"><span class="pb-2 border-dotted border-b-2 border-primary">ログインして使う！</span></p>
           <div class="card-actions justify-center">
-            <button class="btn">Login</button>
+            <%= form_with url: login_path, local: true, html: { class: "w-full" } do |f| %>
+              <div class="form-control mb-5">
+                <%= f.label :email, class: "label" do %>
+                  <span class="label-text">Email</span>
+                <% end %>
+                <%= f.text_field :email, class: 'input border-purple-200', placeholder: 'メールアドレスを入力してください' %>
+              </div>
+              <div class="form-control mb-8">
+                <%= f.label :password, class: "label" do %>
+                  <span class="label-text">Password</span>
+                <% end %>
+                <%= f.password_field :password, class: 'input border-purple-200', placeholder: 'パスワードを入力してください' %>
+              </div>
+              <div class="actions mt-10 my-8">
+                <%= f.submit 'Login', class: 'btn btn-primary w-2/3' %>
+              </div>
+            <% end %>
           </div>
-          <p class="font-bold my-4"><span class="pb-2 border-dotted border-b-2 border-white">初めての方はこちらから！</span></p>
+          <p class="font-bold my-4"><span class="pb-2 border-dotted border-b-2 border-primary">初めての方はこちらから！</span></p>
           <div class="card-actions justify-center">
-            <button class="btn">Sign up</button>
+            <%= link_to "Sign up", new_user_path, class: "btn btn-secondary w-2/3" %>
           </div>
         </div>
       </div>
     </div>
-    <div class="w-4/5 mx-auto my-20">
+    <div class="my-20">
       <h2 class="text-lg font-bold my-4 border-dotted border-b-4 border-purple-200">みんなの万年筆とインクを探してみる</h2>
       <div class="mx-auto my-8 card bg-purple-100 text-primary-content shadow-xl">
         <div class="card-body text-left leading-7">   
