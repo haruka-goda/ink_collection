@@ -28,14 +28,14 @@
             <div class="flex justify-between">
               <div class="flex">
                 <div class="mr-2">
-                  <%= link_to t('defaults.delete'), ink_path(@ink), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm') }, class: "btn btn-secondary" %>
+                  <%= link_to t('defaults.delete'), ink_path(@ink), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm') }, class: "btn btn-secondary font-normal" %>
                 </div>
                 <div class="mr-2">
-                  <%= link_to t('defaults.edit'), edit_ink_path(@ink), class: "btn btn-primary" %>
+                  <%= link_to t('defaults.edit'), edit_ink_path(@ink), class: "btn btn-primary font-normal" %>
                 </div>
               </div>
               <div>
-                <button class="btn btn-primary">万年筆に入れる</button>                  
+                <button class="btn btn-primary font-normal">万年筆に入れる</button>                  
               </div>      
             </div>
             <% else %>
