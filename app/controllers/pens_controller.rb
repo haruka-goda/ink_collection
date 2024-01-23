@@ -1,4 +1,5 @@
 class PensController < ApplicationController
+  skip_before_action :require_login, only: [:index, :show]
   before_action :find_pen, only: [:edit, :update, :destroy]
 
   def index

@@ -23,7 +23,7 @@
               <p class="my-4 break-all"><%= @pen.description %></p>
             </div>
             
-            <% if current_user.own?(@pen) %>
+            <% if current_user&.own?(@pen) %>
               <div class="flex justify-between">
                 <div class="flex">
                   <div class="mr-2">

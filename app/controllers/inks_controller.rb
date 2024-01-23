@@ -1,4 +1,5 @@
 class InksController < ApplicationController
+  skip_before_action :require_login, only: [:index, :show]
   before_action :find_ink, only: [:edit, :update, :destroy]
 
   def index
