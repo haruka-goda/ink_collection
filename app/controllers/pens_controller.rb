@@ -13,7 +13,7 @@ class PensController < ApplicationController
   def create
     @pen = current_user.pens.build(pen_params)
     if @pen.save
-      redirect_to pens_path, success: t('defaults.message.created', item: Pen.model_name.human)
+      redirect_to mypage_pens_path, success: t('defaults.message.created', item: Pen.model_name.human)
     else
       flash.now['error'] = t('defaults.message.not_created', item: Pen.model_name.human)
       render :new, status: :unprocessable_entity
@@ -37,7 +37,7 @@ class PensController < ApplicationController
 
   def destroy
     @pen.destroy!
-    redirect_to pens_path, status: :see_other, success: t('defaults.message.deleted', item: Pen.model_name.human)
+    redirect_to mypage_pens_path, status: :see_other, success: t('defaults.message.deleted', item: Pen.model_name.human)
   end
 
   private

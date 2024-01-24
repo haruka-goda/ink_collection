@@ -12,4 +12,9 @@ Rails.application.routes.draw do
   resources :pens
   resources :inks
   resource :mypage, only: %i[show edit update]
+
+  namespace :mypage do
+    resources :pens, only: :index
+    resources :inks, only: :index
+  end
 end
