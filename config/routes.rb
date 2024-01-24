@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create]
   resources :pens
   resources :inks
-  resource :mypage, only: %i[show edit update]
+  resource :profile, only: %i[show edit update]
 
   namespace :mypage do
     resources :pens, only: :index

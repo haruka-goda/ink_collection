@@ -40,14 +40,14 @@
                     </div>
                   </div>
                   <ul tabindex="0" class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4">
-                    <li><%= link_to "#{current_user.name}’s Page", mypage_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
+                    <li><%= link_to "#{current_user.name}’s Page", profile_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
                     <li class="border-dotted border-b-4 border-purple-200"> </li>
-                    <li><%= link_to "Pencase", mypage_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
+                    <li><%= link_to "Pencase", profile_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
                     <li><%= link_to "My Ink", mypage_inks_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
                     <li><%= link_to "　＋ Ink", new_ink_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
                     <li><%= link_to "My Pen", mypage_pens_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
                     <li><%= link_to "　＋ Pen", new_pen_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
-                    <li><%= link_to "Favorites", mypage_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
+                    <li><%= link_to "Favorites", profile_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
                     <li class="border-dotted border-b-4 border-purple-200"> </li>
                     <li><%= link_to "Logout", logout_path, data: {turbo_method: :delete}, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
                   </ul>
@@ -70,15 +70,15 @@
         </div>
 
         <div class="mb-2">
-          <%= link_to "#{current_user.name}’s Page", mypage_path, class: "block px-4 py-4 hover:bg-purple-100 rounded-full" %>
+          <%= link_to "#{current_user.name}’s Page", profile_path, class: "block px-4 py-4 hover:bg-purple-100 rounded-full" %>
         </div>
         <ul class=" border-dotted border-b-4 border-t-4 border-purple-200">
-        <li><%= link_to "Pencase", mypage_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
+        <li><%= link_to "Pencase", profile_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
         <li><%= link_to "My Ink", mypage_inks_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
         <li><%= link_to "　＋ Ink", new_ink_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
         <li><%= link_to "My Pen", mypage_pens_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
         <li><%= link_to "　＋ Pen", new_pen_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>
-        <li><%= link_to "Favorites", mypage_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>  
+        <li><%= link_to "Favorites", profile_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full" %></li>  
         </ul>
         <div class="mt-2">
           <div><%= link_to "Logout", logout_path, class: "block px-4 py-2 hover:bg-purple-100 rounded-full", data: {turbo_method: :delete} %></div>
