@@ -1,61 +1,56 @@
-<div class="flex justify-center mx-auto">
-  <div class='text-left w-5/6'>
-    <div class=" mx-auto my-10 w-full">
-      <div class="card md:card-side bg-base-100 shadow-xl w-full">
-
-        <div class="md:w-1/2">
-          <div class="mt-6 mx-6 md:m-10">
-            <%= image_tag 'logo.jpg', class: 'mb-6' %>
-            <div class="flex justify-between">
-              <button class="btn btn-sm">＜ Prev</button>
-              <button class="btn btn-sm">Next ＞</button>
-          </div>
-          </div>
-        </div>     
-      
-        <div class="card-body md:w-1/2">
-          <div class="flex flex-col justify-between h-full">
-            <div class="">
-              <p class="text-sm mb-4 lg:my-4"><%= @ink.brand %></p>
-              <h2 class="card-title"><%= @ink.name %></h2>
-              <p class="text-sm my-4"><%= @ink.color %></p>
-              <p class="text-sm my-4"><%= @ink.ink_level %></p>
-              <p class="text-xs my-4"><%= @ink.purchase_date %></p>
-              <p class="my-4 break-all"><%= @ink.description %></p>
-            </div>
-            
-            <% if current_user.own?(@ink) %>
-            <div class="flex justify-between">
-              <div class="flex">
-                <div class="mr-2">
-                  <%= link_to t('defaults.delete'), ink_path(@ink), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm') }, class: "btn btn-secondary" %>
-                </div>
-                <div class="mr-2">
-                  <%= link_to t('defaults.edit'), edit_ink_path(@ink), class: "btn btn-primary" %>
-                </div>
-              </div>
-              <div>
-                <button class="btn btn-primary">万年筆に入れる</button>                  
-              </div>      
-            </div>
-            <% else %>
-              <div class="flex justify-between">
-                <div class="flex items-center">
-                  <%= image_tag 'avatar.png', class: 'h-12' %>
-                  <p class="mx-2 text-xs lg:text-base">Posted by</p>
-                  <%= @ink.user.name %>
-                </div>
-
-                <div class="">
-                  <button class="btn btn-primary">♡</button>
-                </div>            
-              </div>
-            <% end %>
-
-          </div>
-        </div>
+<div class="my-10 mx-auto w-11/12 sm:w-5/6 max-w-5xl">
+  <div class="card md:card-side bg-base-100 shadow-xl w-full">
+    <div class="md:w-1/2">
+      <div class="mt-6 mx-6 md:m-10">
+        <%= image_tag 'logo.jpg', class: 'mb-6' %>
+        <div class="flex justify-between">
+          <button class="btn btn-sm">＜ Prev</button>
+          <button class="btn btn-sm">Next ＞</button>
       </div>
-      
     </div>
+  </div>     
+    
+    <div class="card-body md:w-1/2">
+      <div class="flex flex-col justify-between h-full">
+        <div class="">
+          <p class="text-sm mb-4 lg:my-4"><%= @ink.brand %></p>
+          <h2 class="card-title"><%= @ink.name %></h2>
+          <p class="text-sm my-4"><%= @ink.color %></p>
+          <p class="text-sm my-4"><%= @ink.ink_level %></p>
+          <p class="text-xs my-4"><%= @ink.purchase_date %></p>
+          <p class="my-4 break-all"><%= @ink.description %></p>
+        </div>
+        
+        <% if current_user&.own?(@ink) %>
+        <div class="flex justify-between">
+          <div class="flex">
+            <div class="mr-2">
+              <%= link_to t('defaults.delete'), ink_path(@ink), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm') }, class: "btn btn-secondary font-normal" %>
+            </div>
+            <div class="mr-2">
+              <%= link_to t('defaults.edit'), edit_ink_path(@ink), class: "btn btn-primary font-normal" %>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-primary font-normal">万年筆に入れる</button>                  
+          </div>      
+        </div>
+        <% else %>
+          <div class="flex justify-between">
+            <div class="flex items-center">
+              <%= image_tag 'avatar.png', class: 'h-12' %>
+              <p class="mx-2 text-xs lg:text-base">Posted by</p>
+              <%= @ink.user.name %>
+            </div>
+            <div class="">
+              <button class="btn btn-primary">♡</button>
+            </div>            
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-center mt-10">
+    <%= link_to 'インク検索へ戻る', inks_path, class: "btn font-normal bg-blue-100 hover:bg-blue-200" %>
   </div>
 </div>
