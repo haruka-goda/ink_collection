@@ -7,14 +7,14 @@
   <%= render 'shared/error_messages', object: f.object %>
   <label class="form-control mb-5">
     <div class="label">
-      <%= f.label :brand, class: "label-text" %>
+      <%= f.label :brand, "Brand <span class='text-primary text-xs'>※必須</span>".html_safe, class: "label-text" %>
     </div>
     <%= f.select :brand, ['パイロット', 'セーラー', 'プラチナ'], { include_blank: 'メーカー名' }, { class: 'select select-bordered w-full' } %>
   </label>
 
   <label class="form-control mb-5">
     <div class="label">
-      <%= f.label :name, class: "label-text" %>
+      <%= f.label :name, "Name <span class='text-primary text-xs'>※必須</span>".html_safe, class: "label-text" %>
     </div>
     <%= f.text_field :name, class: 'input input-bordered w-full', placeholder: "万年筆の名前" %>
   </label> 
