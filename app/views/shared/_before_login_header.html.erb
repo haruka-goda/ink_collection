@@ -29,9 +29,9 @@
     <div class="drawer-side z-10">
       <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label> 
       <ul class="menu p-4 w-60 min-h-full bg-base-200">
-        <li><%= link_to (t 'defaults.login'), profile_path, class: "block px-4 py-2 my-1 hover:bg-purple-100 rounded-full" %></li>
-        <li><%= link_to (t 'defaults.register'), profile_path, class: "block px-4 py-2 my-1 hover:bg-purple-100 rounded-full" %></li>
-        <li><%= link_to (t 'defaults.about'), profile_path, class: "block px-4 py-2 my-1 hover:bg-purple-100 rounded-full" %></li>
+        <li><%= link_to (t 'defaults.login'), login_path, class: "block px-4 py-2 my-1 hover:bg-purple-100 rounded-full" %></li>
+        <li><%= link_to (t 'defaults.register'), new_user_path, class: "block px-4 py-2 my-1 hover:bg-purple-100 rounded-full" %></li>
+        <li><%= link_to (t 'defaults.about'), root_path(anchor: "about"), class: "block px-4 py-2 my-1 hover:bg-purple-100 rounded-full" %></li>
       </ul>
     </div>
   </div>
