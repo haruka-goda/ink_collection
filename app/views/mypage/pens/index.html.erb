@@ -7,12 +7,7 @@
   <% else %>
     <p class="mt-8">新しく万年筆を登録しよう！</p>
   <% end %>
-  <div class="my-8 sm:mt-16">
-    <div class="join border">
-      <button class="join-item btn">1</button>
-      <button class="join-item btn btn-active">2</button>
-      <button class="join-item btn">3</button>
-      <button class="join-item btn">4</button>
-    </div>      
+  <div class="my-8 sm:mt-16 w-fit mx-auto">
+    <%= paginate @pens %>
   </div>
 </div>

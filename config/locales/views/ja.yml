@@ -71,3 +71,7 @@ ja:
     inks:
       index:
         title: '自分のインク'
+  pagination:
+    previous: "前へ"
+    next: "次へ"
+    truncate: '...'

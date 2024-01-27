@@ -3,7 +3,7 @@ class PensController < ApplicationController
   before_action :find_pen, only: [:edit, :update, :destroy]
 
   def index
-    @pens = Pen.all.includes(:user).order(created_at: :desc)
+    @pens = Pen.all.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new

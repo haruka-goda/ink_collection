@@ -52,32 +52,38 @@
   </div>
   <div class="my-20">
     <h2 class="text-lg font-bold my-4 border-dotted border-b-4 border-purple-200">自分の万年筆とインクの管理をする</h2>
-    <div class="mx-auto my-8 card bg-pink-50 text-primary-content shadow-xl">
+    <div class="mx-auto my-8 card bg-pink-50 text-primary-content shadow-xl">    
       <div class="card-body">
-        <p class="font-bold my-4"><span class="pb-2 border-dotted border-b-2 border-primary">ログインして使う！</span></p>
-        <div class="card-actions justify-center">
-          <%= form_with url: login_path, local: true, html: { class: "w-full" } do |f| %>
-            <div class="form-control mb-5">
-              <%= f.label :email, class: "label" do %>
-                <span class="label-text">Email</span>
-              <% end %>
-              <%= f.text_field :email, class: 'input border-purple-200', placeholder: 'メールアドレスを入力してください' %>
-            </div>
-            <div class="form-control mb-8">
-              <%= f.label :password, class: "label" do %>
-                <span class="label-text">Password</span>
-              <% end %>
-              <%= f.password_field :password, class: 'input border-purple-200', placeholder: 'パスワードを入力してください' %>
-            </div>
-            <div class="actions mt-10 my-8">
-              <%= f.submit 'Login', class: 'btn btn-primary w-2/3' %>
-            </div>
-          <% end %>
-        </div>
-        <p class="font-bold my-4"><span class="pb-2 border-dotted border-b-2 border-primary">初めての方はこちらから！</span></p>
-        <div class="card-actions justify-center">
-          <%= link_to "Sign up", new_user_path, class: "btn btn-secondary w-2/3" %>
-        </div>
+        <% if logged_in? %>
+          <div class="card-actions justify-center">
+            <%= link_to "My Pencaseをチェック", profile_path, class: 'w-full px-4 py-2 bg-pink-50 hover:skeleton rounded-2xl' %>
+          </div>
+        <% else %>
+          <p class="font-bold my-4"><span class="pb-2 border-dotted border-b-2 border-primary">ログインして使う！</span></p>
+          <div class="card-actions justify-center">
+            <%= form_with url: login_path, local: true, html: { class: "w-full" } do |f| %>
+              <div class="form-control mb-5">
+                <%= f.label :email, class: "label" do %>
+                  <span class="label-text">Email</span>
+                <% end %>
+                <%= f.text_field :email, class: 'input border-purple-200', placeholder: 'メールアドレスを入力してください' %>
+              </div>
+              <div class="form-control mb-8">
+                <%= f.label :password, class: "label" do %>
+                  <span class="label-text">Password</span>
+                <% end %>
+                <%= f.password_field :password, class: 'input border-purple-200', placeholder: 'パスワードを入力してください' %>
+              </div>
+              <div class="actions mt-10 my-8">
+                <%= f.submit 'Login', class: 'btn btn-primary w-2/3' %>
+              </div>
+            <% end %>
+          </div>
+          <p class="font-bold my-4"><span class="pb-2 border-dotted border-b-2 border-primary">初めての方はこちらから！</span></p>
+          <div class="card-actions justify-center">
+            <%= link_to "Sign up", new_user_path, class: "btn btn-secondary w-2/3" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

@@ -1,11 +1,11 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('turbo:load', (event) => {
   console.log("Controller connected.");
-  
+
   const targetElement = document.querySelector('[data-target="target"]');
   if (targetElement) {
     targetElement.style.display = 'none';
   }
-  
+
   const toggleButton = document.querySelector('[data-action="click->toggle"]');
   if (toggleButton) {
     toggleButton.addEventListener('click', () => {
