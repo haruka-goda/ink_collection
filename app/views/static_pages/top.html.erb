@@ -1,6 +1,6 @@
 <div class="mx-auto w-5/6 text-center max-w-lg">
   <%= image_tag('logo.jpg')%>
-  <div role="tablist" class="tabs tabs-lifted w-full border">
+  <div role="tablist" class="tabs tabs-lifted w-full">
     <input type="radio" name="my_tabs_2" role="tab" class="tab font-bold w-full" aria-label="インクを探す" checked />
     <div role="tabpanel" class="tab-content bg-blue-50 border-base-300 rounded-box p-6 w-full">
       <%= render 'inks/search_form', url: inks_path %>
@@ -56,7 +56,10 @@
       <div class="card-body">
         <% if logged_in? %>
           <div class="card-actions justify-center">
-            <%= link_to "My Pencaseをチェック", profile_path, class: 'w-full px-4 py-2 bg-pink-50 hover:skeleton rounded-2xl' %>
+            <div class="w-full mb-2 border-dotted border-b-4 border-white">Links</div>
+            <%= link_to "My Page", profile_path, class: "w-full px-4 py-2 bg-pink-100 border-2 border-pink-200 hover:skeleton rounded-2xl" %>
+            <%= link_to "My Pen Page", mypage_pens_path, class: "w-full px-4 py-2 bg-purple-100 border-2 border-purple-200 hover:skeleton rounded-2xl" %>
+            <%= link_to "My Ink Page", mypage_inks_path, class: "w-full px-4 py-2 bg-blue-100 border-2 border-blue-200 hover:skeleton rounded-2xl" %>
           </div>
         <% else %>
           <p class="font-bold my-4"><span class="pb-2 border-dotted border-b-2 border-primary">ログインして使う！</span></p>
@@ -88,9 +91,16 @@
     </div>
   </div>
   <div class="my-20">
-    <h2 class="text-lg font-bold my-4 border-dotted border-b-4 border-purple-200">みんなの万年筆とインクを探してみる</h2>
+    <h2 class="text-lg font-bold mb-8 border-dotted border-b-4 border-purple-200">みんなの万年筆とインクを探してみる</h2>
+    <div class="w-full mb-4 font-bold px-4 py-2 bg-purple-100 border-2 border-purple-200 hover:skeleton rounded-2xl">
+      <%= link_to "万年筆一覧ページへ", pens_path %>
+    </div>
+    <div class="w-full font-bold px-4 py-2 bg-blue-100 border-2 border-blue-200 hover:skeleton rounded-2xl">
+      <%= link_to "インク一覧ページへ", inks_path %>
+    </div>      
+
     <div class="mx-auto my-8 card bg-purple-100 text-primary-content shadow-xl">
-      <div class="card-body text-left leading-7">   
+      <div class="card-body text-left leading-7">
         <h3 class="card-title mb-2 border-dotted border-b-4 border-white">メーカーから万年筆を探す</h3>
         <h4 class="font-medium">国内</h4>
         <div>
