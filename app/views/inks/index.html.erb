@@ -1,11 +1,11 @@
 <% content_for(:title, t('.title')) %>
 <div class="mx-auto w-5/6 max-w-lg text-center my-10">
   <h1 class="mb-4 text-lg sm:text-2xl font-bold border-dotted border-b-4 border-purple-200">Inks</h1>
-
+  <%= render 'inks/search_select_form', url: inks_path %>
   <% if @inks.present? %>
     <%= render partial: 'shared/product_card', collection: @inks, as: :product %>
   <% else %>
-    <p>見つかりませんでした</p>
+    <p class="mt-10">見つかりませんでした</p>
   <% end %>
 
   <div class="my-8 sm:mt-16">
