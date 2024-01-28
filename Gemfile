@@ -59,6 +59,8 @@ group :development, :test do
 end
 
 gem 'carrierwave'
+gem 'dotenv-rails'
+gem 'fog-aws'
 gem 'kaminari'
 gem 'sorcery'
 gem 'pry-byebug'
