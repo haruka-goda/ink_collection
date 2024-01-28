@@ -6,7 +6,7 @@ class InkImageUploader < CarrierWave::Uploader::Base
   end
 
 	def default_url
-    'ink_placeholder.png'
+    'ink_placeholder.jpeg'
   end
 
   def extension_whitelist

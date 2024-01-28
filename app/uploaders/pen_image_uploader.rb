@@ -6,7 +6,7 @@ class PenImageUploader < CarrierWave::Uploader::Base
   end
 
 	def default_url
-    'ink_placeholder.png'
+    'pen_placeholder.jpg'
   end
 
   def extension_whitelist

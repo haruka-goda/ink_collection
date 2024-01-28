@@ -1,10 +1,17 @@
-<div class="flex items-center flex-col mb-6">
-  <%= image_tag 'logo.jpg', class: ' my-auto mb-6 border' %>
-  <button class="btn btn-primary">画像選択</button>
-</div>
-
 <%= form_with model: ink, local: true, class: "space-y-5" do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
+
+  <div class="flex items-center flex-col mb-6">
+    <div class="form-group">
+      <%= f.label :ink_image %>
+      <%= f.file_field :ink_image, class: 'form-control my-2 custom-file-input', accept: 'image/*' %>
+      <%= f.hidden_field :ink_image_cache %>
+    </div>
+    <%= image_tag ink.ink_image.url,
+                  id: 'preview',
+                  size: '300x200' %>
+  </div>
+
   <label class="form-control mb-5">
     <div class="label">
       <%= f.label :brand, "Brand <span class='text-primary text-xs'>※必須</span>".html_safe, class: "label-text" %>
