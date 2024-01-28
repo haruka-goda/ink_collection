@@ -3,7 +3,8 @@ class InksController < ApplicationController
   before_action :find_ink, only: [:edit, :update, :destroy]
 
   def index
-    @inks = Ink.all.includes(:user).order(created_at: :desc).page(params[:page])
+    @q_inks = Ink.ransack(params[:q])
+    @inks = @q_inks.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def new
