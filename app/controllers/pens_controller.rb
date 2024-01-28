@@ -44,7 +44,7 @@ class PensController < ApplicationController
   private
 
   def pen_params
-    params.require(:pen).permit(:name, :brand, :color, :ink_level, :purchase_date, :description)
+    params.require(:pen).permit(:name, :brand, :nib, :purchase_date, :description, :pen_image, :pen_image_cache)
   end
 
   def find_pen
