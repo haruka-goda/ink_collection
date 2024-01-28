@@ -1,4 +1,5 @@
 class Ink < ApplicationRecord
+  mount_uploader :ink_image, InkImageUploader
   belongs_to :user
 
   validates :name, presence: true, length: { maximum: 40 }
