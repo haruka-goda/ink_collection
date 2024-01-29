@@ -35,7 +35,7 @@
                   <div tabindex="0" role="button" class="">
                     <div class="avatar">
                       <div class="rounded-full h-16 my-auto hover:opacity-80">
-                        <%= image_tag('avatar.png', class: 'max-h-16')%>
+                        <%= image_tag current_user.avatar.url, class: 'max-h-16' %>
                       </div>
                     </div>
                   </div>
@@ -64,8 +64,8 @@
       
       <div class="menu p-4 w-60 min-h-full bg-blue-50">
         <div class="avatar">
-            <%= link_to root_path do %>
-              <%= image_tag('avatar.png', class: 'max-w-16 max-h-16 rounded-full')%>
+            <%= link_to profile_path do %>
+              <%= image_tag current_user.avatar.url, class: 'max-w-16 max-h-16 rounded-full hover:opacity-60' %>
             <% end %>              
         </div>
 
