@@ -6,29 +6,31 @@
     <%= form_with model: @user, url: profile_path, local: true do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <div class="lg:flex lg:mb-10">
-        <div class="flex items-center flex-col lg:w-1/2">
-          <%= image_tag 'avatar.png', class: 'rounded-full h-24 my-auto' %>
-            <div class="my-4">
-              <%= link_to "アイコン変更", root_path, class: "text-sm block px-5 py-4 bg-primary hover:opacity-80 rounded-full font-medium" %>
+      <div class="flex flex-col">
+        <div class="form-group">
+          <%= f.label :avatar, class: 'font-medium text-sm' %>
+          <%= f.file_field :avatar, class: 'form-control my-2 custom-file-input', accept: 'image/*' %>
+          <%= f.hidden_field :avatar_cache %>
+        </div>
+        <%= image_tag @user.avatar.url,
+                      class: 'border rounded-full mx-auto',
+                      id: 'preview',
+                      size: '200x200' %>
+      </div>
+
+      <div class="w-full">
+        <label class="form-control mb-5">
+          <div class="label">
+            <span class="label-text">Email</span>
           </div>
-        </div>
-
-        <div class="w-full lg:w-1/2">
-          <label class="form-control mb-5">
-            <div class="label">
-              <span class="label-text">Email</span>
-            </div>
-            <%= f.email_field :email, placeholder: "変更したいメールアドレス", class: "input border-purple-200 w-full" %>
-          </label>
-
-          <label class="form-control mb-5">
-            <div class="label">
-              <span class="label-text">Name</span>
-            </div>
-            <%= f.text_field :name, placeholder: "変更したい名前", class: "input border-purple-200 w-full" %>
-          </label>
-        </div>
+          <%= f.email_field :email, placeholder: "変更したいメールアドレス", class: "input border-purple-200 w-full" %>
+        </label>
+        <label class="form-control mb-5">
+          <div class="label">
+            <span class="label-text">Name</span>
+          </div>
+          <%= f.text_field :name, placeholder: "変更したい名前", class: "input border-purple-200 w-full" %>
+        </label>
       </div>
 
       <div class="my-10">

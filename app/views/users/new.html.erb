@@ -31,6 +31,19 @@
         <% end %>
         <%= f.password_field :password_confirmation, class: 'input border-purple-200 block w-full', placeholder: 'パスワードをもう一度入力してください' %>
       </div>
+
+      <div class="flex flex-col pt-5">
+        <div class="form-group">
+          <%= f.label :avatar, class: 'font-medium text-sm' %>
+          <%= f.file_field :avatar, class: 'form-control my-2 custom-file-input', accept: 'image/*' %>
+          <%= f.hidden_field :avatar_cache %>
+        </div>
+        <%= image_tag @user.avatar.url,
+                      class: 'border rounded-full mx-auto',
+                      id: 'preview',
+                      size: '200x200' %>
+      </div>
+
       <div class="actions pt-5">
         <%= f.submit 'Create', class: 'block bg-primary font-bold rounded-full p-3 hover:opacity-80 w-full' %>
       </div>
