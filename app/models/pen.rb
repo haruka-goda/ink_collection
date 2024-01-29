@@ -1,4 +1,5 @@
 class Pen < ApplicationRecord
+  mount_uploader :pen_image, PenImageUploader
   belongs_to :user
 
   validates :name, presence: true, length: { maximum: 40 }

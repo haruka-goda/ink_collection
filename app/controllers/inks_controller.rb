@@ -45,7 +45,7 @@ class InksController < ApplicationController
   private
 
   def ink_params
-    params.require(:ink).permit(:name, :brand, :nib, :purchase_date, :description)
+    params.require(:ink).permit(:name, :brand, :color, :ink_level, :purchase_date, :description, :ink_image, :ink_image_cache)
   end
 
   def find_ink

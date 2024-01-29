@@ -58,10 +58,13 @@ group :development, :test do
   gem 'factory_bot_rails'
 end
 
+gem 'carrierwave'
+gem 'dotenv-rails'
+gem 'fog-aws'
+gem 'kaminari'
 gem 'sorcery'
 gem 'pry-byebug'
 gem 'rails-i18n'
-gem 'kaminari'
 gem 'ransack'
 
 group :development do
