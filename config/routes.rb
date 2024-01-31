@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :pens
   resources :inks
   resource :profile, only: %i[show edit update]
+	resources :favorite_pens, only: %i[index create destroy]
+	resources :favorite_inks, only: %i[index create destroy]
 
   namespace :mypage do
     resources :pens, only: :index
