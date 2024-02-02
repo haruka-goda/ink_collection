@@ -1,0 +1,9 @@
+<% if current_user.favorite_pen?(pen) %>
+  <%= button_to pen_favorite_pen_path(pen, current_user.favorite_pens.find_by(pen_id: pen.id)), method: :delete, class: "btn btn-ghost" do %>
+    <p class="text-2xl text-primary">★</p>
+  <% end %>
+<% else %>
+  <%= button_to pen_favorite_pens_path(pen_id: pen.id), method: :post, class: "btn btn-ghost" do %>
+    <p class="text-2xl">☆</p>
+  <% end %>
+<% end %>

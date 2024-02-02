@@ -54,6 +54,9 @@ ja:
       title: '万年筆詳細'
     edit:
       title: '万年筆編集'
+  favorite_pens:
+    index:
+      title: 'お気に入り万年筆一覧'
   inks:
     index:
       title: 'インク一覧'
@@ -64,6 +67,9 @@ ja:
       title: 'インク詳細'
     edit:
       title: 'インク編集'
+  favorite_inks:
+    index:
+      title: 'お気に入りインク一覧'
   mypage:
     pens:
       index:

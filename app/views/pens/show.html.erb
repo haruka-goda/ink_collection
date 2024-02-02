@@ -4,12 +4,8 @@
     <div class="md:w-1/2">
       <div class="mt-6 mx-6 md:m-10">
         <%= image_tag @pen.pen_image.url, class: 'mb-6' %>
-        <div class="flex justify-between">
-          <button class="btn btn-sm">＜ Prev</button>
-          <button class="btn btn-sm">Next ＞</button>
       </div>
-    </div>
-  </div>     
+    </div>     
     
     <div class="card-body md:w-1/2">
       <div class="flex flex-col justify-between h-full">
@@ -43,7 +39,7 @@
               <%= @pen.user.name %>
             </div>
             <div class="">
-              <button class="btn btn-primary">♡</button>
+              <%= render 'favorite_button', pen: @pen  %>
             </div>            
           </div>
         <% end %>
