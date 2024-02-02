@@ -9,12 +9,18 @@ Rails.application.routes.draw do
   get 'privacy_policy', to: 'static_pages#privacy_policy'
   
   resources :users, only: %i[new create]
-  resources :pens
-  resources :inks
   resource :profile, only: %i[show edit update]
-	resources :favorite_pens, only: %i[index create destroy]
-	resources :favorite_inks, only: %i[index create destroy]
 
+  resources :pens do
+    resources :favorite_pens, only: %i[create destroy]
+  end
+  resources :favorite_pens, only: :index
+  
+  resources :inks do
+    resources :favorite_inks, only: %i[create destroy]
+  end
+  resources :favorite_inks, only: :index
+  
   namespace :mypage do
     resources :pens, only: :index
     resources :inks, only: :index

@@ -4,7 +4,6 @@ class FavoriteInksController < ApplicationController
     @favorite_inks = @q_ink.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
 	end
 
-
 	def create
     ink = Ink.find(params[:ink_id])
     current_user.favorite_ink(ink)
