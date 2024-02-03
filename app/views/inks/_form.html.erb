@@ -16,7 +16,7 @@
     <div class="label">
       <%= f.label :brand, "Brand <span class='text-primary text-xs'>※必須</span>".html_safe, class: "label-text" %>
     </div>
-    <%= f.select :brand, ['パイロット', 'セーラー', 'プラチナ'], { include_blank: 'メーカー名' }, { class: 'select select-bordered w-full' } %>
+    <%= f.select :brand, grouped_options_for_select(Ink::BRANDS, f.object.brand), { include_blank: 'メーカー名' }, { class: 'select select-bordered w-full' } %>
   </label>
 
   <label class="form-control mb-5">
@@ -30,7 +30,14 @@
     <div class="label">
       <%= f.label :color, class: "label-text" %>
     </div>
-    <%= f.select :color, ['黒', 'ブルーブラック', '青'], { include_blank: '色' }, { class: 'select select-bordered w-full' } %>
+    <%= f.select :color, Ink::COLORS, { include_blank: '色' }, { class: 'select select-bordered w-full' } %>
+  </label>
+
+  <label class="form-control mb-5">
+    <div class="label">
+      <%= f.label :ink_level, class: "label-text" %>
+    </div>
+    <%= f.select :ink_level, Ink::INK_LEVELS, { include_blank: 'インク残量' }, { class: 'select select-bordered w-full' } %>
   </label>
   
   <label class="form-control mb-5">
