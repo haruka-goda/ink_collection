@@ -10,11 +10,11 @@
     <div class="card-body md:w-1/2">
       <div class="flex flex-col justify-between h-full">
         <div class="">
-          <p class="text-sm mb-4 lg:my-4"><%= @ink.brand %></p>
+          <p class="text-sm mb-4 lg:my-4 font-medium font-medium"><%= @ink.brand %></p>
           <h2 class="card-title"><%= @ink.name %></h2>
           <p class="text-sm my-4"><%= @ink.color %></p>
-          <p class="text-sm my-4"><%= @ink.ink_level %></p>
-          <p class="text-xs my-4"><%= @ink.purchase_date %></p>
+          <p class="text-xs my-4">購入日：<%= @ink.purchase_date %></p>
+          <p class="text-xs my-4">インク残量：<%= @ink.ink_level %></p>
           <p class="my-4 break-all"><%= @ink.description %></p>
         </div>
         
