@@ -11,7 +11,7 @@ class Pen < ApplicationRecord
     '国内ブランド' => ['その他(国内)', 'パイロット', 'セーラー', 'プラチナ'],
     '海外ブランド' => ['その他(海外)', 'アウロラ', 'カヴェコ', 'カランダッシュ', 'デルタ', 'パーカー', 'ビスコンティ', 'ペリカン', 'モンブラン', 'モンテグラッパ', 'ラミー']
   }.freeze
-  NIB_SIZES = ['BB', 'B', 'MB', 'M', 'F', 'EF'].freeze
+  NIB_SIZES = ['BB（極太）', 'B（太字）', 'M（中字）', 'MF（中細）', 'F（細字）', 'EF（極細）', 'その他'].freeze
 
   def self.ransackable_attributes(auth_object = nil)
     %w[name brand]
