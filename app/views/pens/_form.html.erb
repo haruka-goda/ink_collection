@@ -47,6 +47,13 @@
     <%= f.text_area :description, class: 'textarea textarea-bordered w-full h-24', placeholder: "感想などご自由に！" %>
   </label>
 
+  <label class="form-control mb-5">
+    <div class="label">
+      <%= f.label :ink_id, class: "label-text" %>
+    </div>
+    <%= f.collection_select :ink_id, @user_inks, :id, :full_name, { include_blank: 'インクなし' }, { class: 'select select-bordered w-full' } %>
+  </label>
+
   <div class="pt-8">
     <%= f.submit "登録", class: 'btn btn-primary w-full' %>
   </div>

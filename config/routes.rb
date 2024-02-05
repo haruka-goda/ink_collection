@@ -7,13 +7,12 @@ Rails.application.routes.draw do
 
   get 'terms_of_service', to: 'static_pages#terms_of_service'
   get 'privacy_policy', to: 'static_pages#privacy_policy'
-  
+
   resources :users, only: %i[new create]
   resource :profile, only: %i[show edit update]
 
   resources :pens do
     resources :favorite_pens, only: %i[create destroy]
-    get :set_ink, on: :member
   end
   resources :favorite_pens, only: :index
   

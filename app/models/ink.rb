@@ -21,4 +21,8 @@ class Ink < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     %w[name brand]
   end
+
+  def full_name
+    "#{brand} #{name}"
+  end
 end
