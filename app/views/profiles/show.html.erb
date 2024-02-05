@@ -17,62 +17,66 @@
 
   <h1 class="w-full text-lg sm:text-2xl font-bold my-10 border-dotted border-b-4 border-purple-200">Pencase</h1>
 
-  <div class="rounded-2xl shadow-xl my-4 bg-base-100">
-    <div class="flex">
-      <div class="w-3/12">
-        <%= image_tag 'logo.jpg', class: 'rounded-tl-2xl' %>        
-      </div>
-      <div class="w-8/12">
-        <div class="h-full flex items-center">
-          <div class="text-left pl-6">
-            <p class="text-xs sm:text-base mb-2">メーカー名</p>
-            <p class="text-sm sm:text-lg">万年筆の名前</p>
+  <% @pens_with_inks.each do |pen| %>
+    <% if pen.ink.present? %>
+      <div class="rounded-2xl shadow-xl my-4 bg-base-100">
+        <%= link_to pen_path(pen), class: 'flex' do %>
+          <div class="flex">
+            <div class="w-3/12">
+              <%= image_tag pen.pen_image.url, class: 'rounded-tl-2xl' %>
+            </div>
+            <div class="w-8/12">
+              <div class="h-full flex items-center">
+                <div class="text-left pl-6">
+                  <p class="text-xs sm:text-base mb-2"><%= pen.brand %></p>
+                  <p class="text-sm sm:text-lg"><%= pen.name %></p>
+                </div>
+              </div>
+            </div>
+            <div class="w-1/12">
+              <div class="h-full flex items-center">
+                <svg class="h-6 w-6 fill-current md:h-8 md:w-8" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path></svg>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="w-1/12">
-        <div class="h-full flex items-center">
-          <svg class="h-6 w-6 fill-current md:h-8 md:w-8" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path></svg>
-        </div>
-      </div>
-    </div>
-    <div class="border-dotted border-b-4 border-purple-100"> </div>
+        <% end %>
 
-    <div class="flex">
-      <div class="w-3/12">
-        <%= image_tag 'logo.jpg', class: 'rounded-bl-2xl' %>        
-      </div>
-      <div class="w-8/12">
-        <div class="h-full flex items-center">
-          <div class="text-left pl-6">
-            <p class="text-xs sm:text-base mb-2">メーカー名</p>
-            <p class="text-sm sm:text-lg">インクの名前</p>
+        <div class="border-dotted border-b-4 border-purple-100"> </div>
+
+        <%= link_to ink_path(pen.ink), class: 'flex' do %>
+          <div class="flex">
+            <div class="w-3/12">
+              <%= image_tag pen.ink.ink_image.url, class: 'rounded-tl-2xl' %>
+            </div>
+            <div class="w-8/12">
+              <div class="h-full flex items-center">
+                <div class="text-left pl-6">
+                  <p class="text-xs sm:text-base mb-2"><%= pen.ink.brand %></p>
+                  <p class="text-sm sm:text-lg"><%= pen.ink.name %></p>
+                </div>
+              </div>
+            </div>
+            <div class="w-1/12">
+              <div class="h-full flex items-center">
+                <svg class="h-6 w-6 fill-current md:h-8 md:w-8" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path></svg>
+              </div>
+            </div>
           </div>
-        </div>
+        <% end %>
+
       </div>
-      <div class="w-1/12">
-        <div class="h-full flex items-center">
-          <svg class="h-6 w-6 fill-current md:h-8 md:w-8" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path></svg>
-        </div>
-      </div>
+    <% end %>
+  <% end %>
+
+  <% if @pens.present? %>
+    <div class="mt-12">
+      <%= link_to "＋ 万年筆を選んでインクを入れる", mypage_pens_path, class: "text-sm block px-5 py-4 bg-primary hover:opacity-80 rounded-full font-medium outline outline-2 outline-offset-4 outline-primary" %>
     </div>
-  </div>
-  <div data-target="target">
-    <button class="text-sm px-5 py-4 mb-10 bg-secondary hover:opacity-80 rounded-full font-medium">削除</button>
-  </div>
-
-
-  <div class="mt-12">
-    <%= link_to "＋ 新しい組み合わせを登録", root_path, class: "text-sm block px-5 py-4 bg-primary hover:opacity-80 rounded-full font-medium outline outline-2 outline-offset-4 outline-primary" %>
-  </div>
-  <div class="mt-6">
-    <p class="text-xs text-left leading-6">※同じ万年筆に新しいインクを入れると上書きされます</p>
-  </div>
-  <div class="mt-8">
-    <button data-action="click->toggle" class="block w-full py-4 text-sm font-medium hover:opacity-80 rounded-full bg-secondary outline outline-2 outline-offset-4 outline-secondary">
-      ー　組み合わせを解除する
-    </button>
-  </div>
+  <% else %>
+    <div class="mt-12">
+      <%= link_to "＋ 万年筆を登録", new_pen_path, class: "text-sm block px-5 py-4 bg-primary hover:opacity-80 rounded-full font-medium outline outline-2 outline-offset-4 outline-primary" %>
+    </div>
+  <% end %>
       
   <div class="my-16">
     <h2 class="w-full text-lg sm:text-2xl font-bold my-6 border-dotted border-b-4 border-purple-200">Links</h2>

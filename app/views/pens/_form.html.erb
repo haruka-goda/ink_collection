@@ -1,22 +1,23 @@
 <%= form_with model: pen, local: true, class: "space-y-5" do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
-  <div class="flex items-center flex-col mb-6">
+  <div class="flex flex-col mb-6">
     <div class="form-group">
       <%= f.label :pen_image %>
       <%= f.file_field :pen_image, class: 'form-control my-2 mx-auto custom-file-input', accept: 'image/*' %>
       <%= f.hidden_field :pen_image_cache %>
     </div>
     <%= image_tag @pen.pen_image.url,
+                  class: 'mx-auto',
                   id: 'preview',
-                  size: '300x200' %>
+                  size: '300x300' %>
   </div>
 
   <label class="form-control mb-5">
     <div class="label">
       <%= f.label :brand, "Brand <span class='text-primary text-xs'>※必須</span>".html_safe, class: "label-text" %>
     </div>
-    <%= f.select :brand, ['パイロット', 'セーラー', 'プラチナ'], { include_blank: 'メーカー名' }, { class: 'select select-bordered w-full' } %>
+    <%= f.select :brand, grouped_options_for_select(Pen::BRANDS, f.object.brand), { include_blank: 'メーカー名' }, { class: 'select select-bordered w-full' } %>
   </label>
 
   <label class="form-control mb-5">
@@ -30,7 +31,7 @@
     <div class="label">
       <%= f.label :nib, class: "label-text" %>
     </div>
-    <%= f.select :nib, ['B', 'M', 'F'], { include_blank: 'ペン先' }, { class: 'select select-bordered w-full' } %>
+    <%= f.select :nib, Pen::NIB_SIZES, { include_blank: 'ペン先' }, { class: 'select select-bordered w-full' } %>
   </label>
   
   <label class="form-control mb-5">
@@ -45,6 +46,13 @@
       <%= f.label :description, class: "label-text" %>
     </div>
     <%= f.text_area :description, class: 'textarea textarea-bordered w-full h-24', placeholder: "感想などご自由に！" %>
+  </label>
+
+  <label class="form-control mb-5">
+    <div class="label">
+      <%= f.label :ink_id, class: "label-text" %>
+    </div>
+    <%= f.collection_select :ink_id, @user_inks, :id, :full_name, { include_blank: 'インクなし' }, { class: 'select select-bordered w-full' } %>
   </label>
 
   <div class="pt-8">

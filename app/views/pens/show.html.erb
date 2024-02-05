@@ -9,17 +9,19 @@
     
     <div class="card-body md:w-1/2">
       <div class="flex flex-col justify-between h-full">
-        <div class="">
+        <div class="flex flex-col justify-between">
         <p class="text-sm mb-4 lg:my-4"><%= @pen.brand %></p>
         <h2 class="card-title"><%= @pen.name %></h2>
         <p class="text-sm my-4"><%= @pen.nib %></p>
-        <p class="text-xs my-4"><%= @pen.purchase_date %></p>
+        <% if @pen.purchase_date.present? %>
+          <p class="text-xs my-4">購入日：<%= @pen.purchase_date %></p>
+        <% end %>
         <p class="my-4 break-all"><%= @pen.description %></p>
+        <p class="text-sm my-4 break-all">入っているインク：<%= @pen.ink.present? ? @pen.ink.full_name : 'インクなし' %></p>
         </div>
         
         <% if current_user&.own?(@pen) %>
-        <div class="flex justify-between">
-          <div class="flex">
+          <div class="flex justify-end">
             <div class="mr-2">
               <%= link_to t('defaults.delete'), pen_path(@pen), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm') }, class: "btn btn-secondary font-normal" %>
             </div>
@@ -27,10 +29,6 @@
               <%= link_to t('defaults.edit'), edit_pen_path(@pen), class: "btn btn-primary font-normal" %>
             </div>
           </div>
-          <div>
-            <button class="btn btn-primary font-normal">インクを入れる</button>                  
-          </div>      
-        </div>
         <% else %>
           <div class="flex justify-between">
             <div class="flex items-center">

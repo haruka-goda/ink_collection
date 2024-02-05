@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_30_164810) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_03_081743) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -38,7 +38,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_30_164810) do
     t.string "name", null: false
     t.string "brand", null: false
     t.string "color"
-    t.integer "ink_level"
+    t.string "ink_level"
     t.date "purchase_date"
     t.text "description"
     t.bigint "user_id", null: false
@@ -58,6 +58,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_30_164810) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "pen_image"
+    t.integer "ink_id"
+    t.index ["ink_id"], name: "index_pens_on_ink_id"
     t.index ["user_id"], name: "index_pens_on_user_id"
   end
 
@@ -77,5 +79,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_30_164810) do
   add_foreign_key "favorite_pens", "pens"
   add_foreign_key "favorite_pens", "users"
   add_foreign_key "inks", "users"
+  add_foreign_key "pens", "inks"
   add_foreign_key "pens", "users"
 end

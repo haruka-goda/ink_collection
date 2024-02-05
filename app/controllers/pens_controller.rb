@@ -9,6 +9,7 @@ class PensController < ApplicationController
 
   def new
     @pen = Pen.new
+    @user_inks = current_user.inks.select(:id, :brand, :name)
   end
 
   def create
@@ -19,13 +20,16 @@ class PensController < ApplicationController
       flash.now['error'] = t('defaults.message.not_created', item: Pen.model_name.human)
       render :new, status: :unprocessable_entity
     end
+    @user_inks = current_user.inks.select(:id, :brand, :name)
   end
 
   def show
     @pen = Pen.find(params[:id])
   end
 
-  def edit; end
+  def edit; 
+    @user_inks = current_user.inks.select(:id, :brand, :name)
+  end
 
   def update
     if @pen.update(pen_params)
@@ -44,7 +48,7 @@ class PensController < ApplicationController
   private
 
   def pen_params
-    params.require(:pen).permit(:name, :brand, :nib, :purchase_date, :description, :pen_image, :pen_image_cache)
+    params.require(:pen).permit(:name, :brand, :nib, :purchase_date, :description, :pen_image, :pen_image_cache, :ink_id)
   end
 
   def find_pen

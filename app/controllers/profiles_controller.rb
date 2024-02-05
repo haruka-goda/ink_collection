@@ -12,7 +12,10 @@ class ProfilesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @pens = current_user.pens
+    @pens_with_inks = current_user.pens.includes(:ink).where.not(ink_id: nil)
+  end
 
   private
 
