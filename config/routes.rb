@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   resources :pens do
     resources :favorite_pens, only: %i[create destroy]
+    get :set_ink, on: :member
   end
   resources :favorite_pens, only: :index
   

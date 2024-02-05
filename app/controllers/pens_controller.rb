@@ -41,6 +41,10 @@ class PensController < ApplicationController
     redirect_to mypage_pens_path, status: :see_other, success: t('defaults.message.deleted', item: Pen.model_name.human)
   end
 
+  def set_ink
+    @pen = Pen.find(params[:id])
+  end
+
   private
 
   def pen_params
