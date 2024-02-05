@@ -12,7 +12,9 @@ class ProfilesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @pen = current_user.pens.first
+  end
 
   private
 

@@ -62,17 +62,24 @@
   </div>
 
 
-  <div class="mt-12">
-    <%= link_to "＋ 新しい組み合わせを登録", root_path, class: "text-sm block px-5 py-4 bg-primary hover:opacity-80 rounded-full font-medium outline outline-2 outline-offset-4 outline-primary" %>
-  </div>
-  <div class="mt-6">
-    <p class="text-xs text-left leading-6">※同じ万年筆に新しいインクを入れると上書きされます</p>
-  </div>
-  <div class="mt-8">
-    <button data-action="click->toggle" class="block w-full py-4 text-sm font-medium hover:opacity-80 rounded-full bg-secondary outline outline-2 outline-offset-4 outline-secondary">
-      ー　組み合わせを解除する
-    </button>
-  </div>
+  <% if @pen %>
+    <div class="mt-12">
+      <%= link_to "＋ 新しい組み合わせを登録", set_ink_pen_path(@pen), class: "text-sm block px-5 py-4 bg-primary hover:opacity-80 rounded-full font-medium outline outline-2 outline-offset-4 outline-primary" %>
+    </div>
+    <div class="mt-6">
+      <p class="text-xs text-left leading-6">※同じ万年筆に新しいインクを入れると上書きされます</p>
+    </div>
+    <div class="mt-8">
+      <button data-action="click->toggle" class="block w-full py-4 text-sm font-medium hover:opacity-80 rounded-full bg-secondary outline outline-2 outline-offset-4 outline-secondary">
+        ー　組み合わせを解除する
+      </button>
+    </div>
+
+  <% else %>
+    <div class="mt-12">
+      <%= link_to "＋ 万年筆を登録", new_pen_path, class: "text-sm block px-5 py-4 bg-primary hover:opacity-80 rounded-full font-medium outline outline-2 outline-offset-4 outline-primary" %>
+    </div>
+  <% end %>
       
   <div class="my-16">
     <h2 class="w-full text-lg sm:text-2xl font-bold my-6 border-dotted border-b-4 border-purple-200">Links</h2>

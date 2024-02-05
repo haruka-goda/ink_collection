@@ -1,6 +1,6 @@
 class PensController < ApplicationController
   skip_before_action :require_login, only: [:index, :show]
-  before_action :find_pen, only: [:edit, :update, :destroy]
+  before_action :find_pen, only: [:edit, :update, :destroy, :set_ink]
 
   def index
     @q_pens = Pen.ransack(params[:q])
@@ -42,7 +42,6 @@ class PensController < ApplicationController
   end
 
   def set_ink
-    @pen = Pen.find(params[:id])
   end
 
   private
