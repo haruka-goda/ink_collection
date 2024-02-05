@@ -1,15 +1,16 @@
 <%= form_with model: pen, local: true, class: "space-y-5" do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
-  <div class="flex items-center flex-col mb-6">
+  <div class="flex flex-col mb-6">
     <div class="form-group">
       <%= f.label :pen_image %>
       <%= f.file_field :pen_image, class: 'form-control my-2 mx-auto custom-file-input', accept: 'image/*' %>
       <%= f.hidden_field :pen_image_cache %>
     </div>
     <%= image_tag @pen.pen_image.url,
+                  class: 'mx-auto',
                   id: 'preview',
-                  size: '300x200' %>
+                  size: '300x300' %>
   </div>
 
   <label class="form-control mb-5">

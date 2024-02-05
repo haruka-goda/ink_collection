@@ -1,13 +1,14 @@
 <%= form_with model: ink, local: true, class: "space-y-5" do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 
-  <div class="flex items-center flex-col mb-6">
+  <div class="flex flex-col mb-6">
     <div class="form-group">
       <%= f.label :ink_image %>
       <%= f.file_field :ink_image, class: 'form-control my-2 custom-file-input', accept: 'image/*' %>
       <%= f.hidden_field :ink_image_cache %>
     </div>
     <%= image_tag ink.ink_image.url,
+                  class: 'mx-auto',
                   id: 'preview',
                   size: '300x200' %>
   </div>
