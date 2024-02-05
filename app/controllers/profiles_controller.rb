@@ -13,7 +13,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @pen = current_user.pens.first
+    @pens = current_user.pens
   end
 
   private

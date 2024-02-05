@@ -28,8 +28,10 @@
               <%= link_to t('defaults.edit'), edit_ink_path(@ink), class: "btn btn-primary font-normal" %>
             </div>
           </div>
-          <div>
-            <button class="btn btn-primary font-normal">万年筆に入れる</button>                  
+          <div>            
+            <% if @pens.present? %>
+              <%= link_to '万年筆に入れる', set_ink_pen_path(@pens.first), class: 'btn btn-primary font-normal' %>
+            <% end %>
           </div>      
         </div>
         <% else %>
