@@ -12,7 +12,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
 	def default_url
-    'logo.jpg'
+    'logo.webp'
   end
 
   def extension_whitelist
