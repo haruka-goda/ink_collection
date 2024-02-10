@@ -29,7 +29,7 @@
               <div class="flex items-stretch">
                 <div class="dropdown dropdown-end">
                   <div tabindex="0" role="button" class="">
-                    <div class="avatar">
+                    <div class="avatar w-16 h-16 rounded-full">
                         <%= image_tag current_user.avatar.url, class: 'max-w-16 max-h-16 rounded-full hover:opacity-60' %>
                     </div>
                   </div>
@@ -60,7 +60,7 @@
       <div class="menu p-4 w-60 min-h-full bg-blue-50">
         <div class="avatar w-16 h-16 rounded-full">
             <%= link_to profile_path do %>
-              <%= image_tag current_user.avatar.url, class: 'hover:opacity-60' %>
+              <%= image_tag current_user.avatar.url, class: 'max-w-16 max-h-16 rounded-full hover:opacity-60' %>
             <% end %>              
         </div>
 
