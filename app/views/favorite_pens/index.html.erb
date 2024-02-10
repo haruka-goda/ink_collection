@@ -5,7 +5,7 @@
   <% if @favorite_pens.present? %>
     <%= render partial: 'shared/product_card', collection: @favorite_pens, as: :product %>
   <% else %>
-    <p class="mt-10">見つかりませんでした</p>
+    <p class="mt-10">まだお気に入りが登録されていません</p>
   <% end %>
 
   <div class="my-8 sm:mt-16">
