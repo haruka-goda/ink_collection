@@ -2,7 +2,7 @@
   <div class="flex">
     <%= f.search_field :name_or_brand_cont, placeholder: "Type here", class: "input w-full" %>
     <div class="ml-2 bg-white p-3">
-      <%= f.select :brand_eq, ['パイロット', 'セーラー', 'プラチナ'], include_blank: 'メーカー名' %>
+      <%= f.select :brand_eq, grouped_options_for_select(Pen::BRANDS), include_blank: 'メーカー名' %>
     </div>
     <button type="submit" class="btn bg-purple-200 p-4 ml-2">
       <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512" class="w-4 h-4">
