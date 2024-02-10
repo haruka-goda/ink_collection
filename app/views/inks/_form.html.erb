@@ -3,8 +3,10 @@
 
   <div class="flex flex-col mb-6">
     <div class="form-group">
-      <%= f.label :ink_image %>
-      <%= f.file_field :ink_image, class: 'form-control my-2 custom-file-input', accept: 'image/*' %>
+      <label class="my-2 btn btn-primary font-medium text-sm text-center">
+        <span class="ml-5">画像を選択する</span> 
+        <%= f.file_field :ink_image, class: "hidden", accept: 'image/*'  %>
+      </label>
       <%= f.hidden_field :ink_image_cache %>
     </div>
     <%= image_tag ink.ink_image.url,

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background: #FCF9F4;
+  background: #FFFFF9;
   color: #2b2446;
   font-family: 'Josefin Sans', 'Zen Kaku Gothic New', sans-serif;
   /* 以下はコンテンツが少ない時にフッターを最下部に表示させるため */
@@ -14,22 +14,4 @@ body {
 
 footer{
   margin-top:auto;
-}
-
-.custom-file-input {
-  margin: 1rem auto;
-  width: fit-content;
-}
-
-.custom-file-input::file-selector-button {
-  margin-right: 1rem;
-  padding: .375rem .75rem;
-  border: none;
-  border-radius: 9999px;
-  background-color: #9D8EAC;
-  color: white;
-}
-
-.custom-file-input::file-selector-button:hover {
-  background-color: #C2B9CD;
 }

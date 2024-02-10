@@ -1,5 +1,7 @@
-<div class="mx-auto w-5/6 text-center max-w-lg">
-  <%= image_tag('logo.jpg')%>
+<div class="mx-auto w-11/12 text-center max-w-lg">
+  <div class="mb-10">
+    <%= image_tag('logo.webp')%>
+  </div>
   <div role="tablist" class="tabs tabs-lifted w-full">
     <input type="radio" name="my_tabs_2" role="tab" class="tab font-bold w-full" aria-label="インクを探す" checked />
     <div role="tabpanel" class="tab-content bg-blue-50 border-base-300 rounded-box p-6 w-full">
@@ -11,41 +13,44 @@
     </div>
   </div>
 
+
   <div class="my-20">
     <h1 class="text-lg font-bold my-4 border-dotted border-b-4 border-purple-200">万年筆とインクの管理を簡単に！</h1>
-    <p class="text-left leading-7">
-      インクコレクションは、自分の持っている万年筆やインクを管理したり、
-      みんなの万年筆やインクを検索して気になるものを見つけることができるWebアプリです。
+    <p class="text-left sm:text-center leading-8 w-11/12 mx-auto">
+      インクコレクションは、<br class="hidden sm:block">
+      <strong>自分の持っている万年筆やインクを管理</strong>したり、<br class="hidden sm:block">
+      <strong>みんなの万年筆やインクを検索</strong>して、<br class="hidden sm:block">
+      気になるものを見つけることができるWebアプリです。
     </p>
   </div>
   <div class="my-20">
     <h2 class="text-lg font-bold my-4 border-dotted border-b-4 border-purple-200">こんなことありませんか？？</h2>
     <div class="chat chat-start">
-      <div class="chat-bubble chat-bubble-primary text-left">今、どの万年筆にどのインクを入れていたっけ…？</div>
+      <div class="chat-bubble chat-bubble-primary text-left">今、どの万年筆にどのインクを入れてたっけ…？</div>
     </div>
     <div class="chat chat-end">
-      <div class="chat-bubble chat-bubble-secondary text-left">どんなインクを持ってたっけ…？残りどれくらいだっけ…？</div>
+      <div class="chat-bubble chat-bubble-secondary text-left">どんなインクを持ってたっけ…？<br class="sm:hidden">残りどれくらいだっけ…？</div>
     </div>
     <div class="chat chat-start">
-      <div class="chat-bubble chat-bubble-primary text-left">新しいインク買いたい！万年筆買いたい！<br>
+      <div class="chat-bubble chat-bubble-primary text-left">新しいインク買いたい！<br class="sm:hidden">万年筆買いたい！<br>
       でもどんなのがいいんだろう…？</div>
     </div>
   </div>
   <div>
     <h2 class="text-lg font-bold my-4 border-dotted border-b-4 border-purple-200">そんなあなたに！！</h2>
     <div class="card bg-base-100 shadow-xl mx-auto my-4">
-      <div class="card-body text-left">
-        <h2 class="card-title">インクコレクションでできること</h2>
-        <p>投稿されている万年筆やインクの情報を検索し、一覧で見ることができます。</p>
+      <div class="card-body">
+        <h2 class="font-bold text-xl">インクコレクションで<br class="sm:hidden">できること</h2>
+        <p class="text-left leading-8">投稿されている万年筆やインクの情報を検索し、一覧で見ることができます。</p>
       </div>
       <%= image_tag('dummy.png', class: 'w-full') %>
     </div>
   </div>
   <div class="mx-auto">
     <div class="card bg-base-100 shadow-xl mx-auto my-4">
-      <div class="card-body text-left">
-        <h2 class="card-title">ログインするとさらに！</h2>
-        <p>自分の持っている万年筆とインクを登録できます。また、今使っている万年筆にどのインクが入っているかを紐づけて、管理することができます</p>
+      <div class="card-body">
+        <h2 class="font-bold text-xl">ログインするとさらに！</h2>
+        <p class="text-left leading-8">自分の持っている万年筆とインクを登録できます。<br>また、<strong>今使っている万年筆にどのインクが入っているかを紐づけて、管理</strong>することができます</p>
       </div>
       <%= image_tag('dummy.png', class: 'w-full') %>
     </div>
@@ -58,8 +63,8 @@
           <div class="card-actions justify-center">
             <div class="w-full mb-2 border-dotted border-b-4 border-white">Links</div>
             <%= link_to "My Page", profile_path, class: "w-full px-4 py-2 bg-pink-100 border-2 border-pink-200 hover:skeleton rounded-2xl" %>
-            <%= link_to "My Pen Page", mypage_pens_path, class: "w-full px-4 py-2 bg-purple-100 border-2 border-purple-200 hover:skeleton rounded-2xl" %>
-            <%= link_to "My Ink Page", mypage_inks_path, class: "w-full px-4 py-2 bg-blue-100 border-2 border-blue-200 hover:skeleton rounded-2xl" %>
+            <%= link_to "My Pens", mypage_pens_path, class: "w-full px-4 py-2 bg-purple-100 border-2 border-purple-200 hover:skeleton rounded-2xl" %>
+            <%= link_to "My Inks", mypage_inks_path, class: "w-full px-4 py-2 bg-blue-100 border-2 border-blue-200 hover:skeleton rounded-2xl" %>
           </div>
         <% else %>
           <p class="font-bold my-4"><span class="pb-2 border-dotted border-b-2 border-primary">ログインして使う！</span></p>
@@ -100,28 +105,26 @@
     </div>      
 
     <div class="mx-auto my-8 card bg-purple-100 text-primary-content shadow-xl">
-      <div class="card-body text-left leading-7">
-        <h3 class="card-title mb-2 border-dotted border-b-4 border-white">メーカーから万年筆を探す</h3>
-        <h4 class="font-medium">国内</h4>
+      <div class="card-body">
+        <h3 class="font-bold text-xl mb-2 border-dotted border-b-4 border-white">メーカーから万年筆を探す</h3>
         <div>
-          <a href="#">パイロット</a><a href="#">セーラー</a><a href="#">プラチナ</a>
-        </div>
-        <h4 class="font-medium">海外</h4>
-        <div>
-          <a href="#">アウロラ</a><a href="#">モンブラン</a><a href="#">ペリカン</a>
+          <% Pen::BRANDS.each do |_, brands| %>
+            <% brands.each do |brand| %>
+              <%= link_to brand, pens_path(q: { name_or_brand_cont: brand }), class: "btn btm btn-sm mt-3" %>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
     <div class="mx-auto my-8 card bg-blue-100 text-primary-content shadow-xl">
-      <div class="card-body text-left leading-7">   
-        <h3 class="card-title mb-2 border-dotted border-b-4 border-white">メーカーからインクを探す</h3>
-        <h4 class="font-medium">国内</h4>
-        <div>
-          <a href="#">パイロット</a><a href="#">セーラー</a><a href="#">プラチナ</a>
-        </div>
-        <h4 class="font-medium">海外</h4>
-        <div>
-          <a href="#">アウロラ</a><a href="#">モンブラン</a><a href="#">ペリカン</a>
+      <div class="card-body">   
+        <h3 class="font-bold text-xl mb-2 border-dotted border-b-4 border-white">メーカーからインクを探す</h3>
+        <div class="">
+          <% Ink::BRANDS.each do |_, brands| %>
+            <% brands.each do |brand| %>
+              <%= link_to brand, inks_path(q: { name_or_brand_cont: brand }), class: "btn btm btn-sm mt-3" %>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
