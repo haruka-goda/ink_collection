@@ -40,7 +40,7 @@
     <h2 class="text-lg font-bold my-4 border-dotted border-b-4 border-purple-200">そんなあなたに！！</h2>
     <div class="card bg-base-100 shadow-xl mx-auto my-4">
       <div class="card-body">
-        <h2 class="font-bold text-xl">インクコレクションでできること</h2>
+        <h2 class="font-bold text-xl">インクコレクションで<br class="sm:hidden">できること</h2>
         <p class="text-left leading-8">投稿されている万年筆やインクの情報を検索し、一覧で見ることができます。</p>
       </div>
       <%= image_tag('dummy.png', class: 'w-full') %>
@@ -63,8 +63,8 @@
           <div class="card-actions justify-center">
             <div class="w-full mb-2 border-dotted border-b-4 border-white">Links</div>
             <%= link_to "My Page", profile_path, class: "w-full px-4 py-2 bg-pink-100 border-2 border-pink-200 hover:skeleton rounded-2xl" %>
-            <%= link_to "My Pen Page", mypage_pens_path, class: "w-full px-4 py-2 bg-purple-100 border-2 border-purple-200 hover:skeleton rounded-2xl" %>
-            <%= link_to "My Ink Page", mypage_inks_path, class: "w-full px-4 py-2 bg-blue-100 border-2 border-blue-200 hover:skeleton rounded-2xl" %>
+            <%= link_to "My Pens", mypage_pens_path, class: "w-full px-4 py-2 bg-purple-100 border-2 border-purple-200 hover:skeleton rounded-2xl" %>
+            <%= link_to "My Inks", mypage_inks_path, class: "w-full px-4 py-2 bg-blue-100 border-2 border-blue-200 hover:skeleton rounded-2xl" %>
           </div>
         <% else %>
           <p class="font-bold my-4"><span class="pb-2 border-dotted border-b-2 border-primary">ログインして使う！</span></p>
