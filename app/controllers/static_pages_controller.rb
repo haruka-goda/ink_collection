@@ -1,18 +1,8 @@
 class StaticPagesController < ApplicationController
-  def top
-  end
-  def login
-  end
-  def signup
-  end
-  def mypage
-  end
-  def mypageedit
-  end
-  def inkshow
-  end
-  def inkedit
-  end
-  def pencase
-  end
+  skip_before_action :require_login, only: %i[top privacy_policy terms_of_service]
+
+  def top; end
+  def privacy_policy; end
+  def terms_of_service; end
+  def contact_us; end
 end

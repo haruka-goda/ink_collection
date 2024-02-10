@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background: #FCF9F4;
+  background: #FFFFF9;
   color: #2b2446;
   font-family: 'Josefin Sans', 'Zen Kaku Gothic New', sans-serif;
   /* 以下はコンテンツが少ない時にフッターを最下部に表示させるため */

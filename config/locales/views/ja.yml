@@ -4,10 +4,24 @@ ja:
     register: '新規登録'
     logout: 'ログアウト'
     about: 'インクコレクションとは？'
+    search_word: '検索ワード'
+    show: '詳細'
+    edit: '編集'
+    delete: '削除'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
       not_created: "%{item}を作成できませんでした"
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新できませんでした"
+      deleted: "%{item}を削除しました"
+      delete_confirm: '本当に削除しますか？'
+  static_pages:
+    top: 
+    privacy_policy:
+      title: 'プライバシーポリシー'
+    terms_of_service:
+      title: '利用規約'
   users:
     new:
       title: '新規登録'
@@ -28,3 +42,42 @@ ja:
   profiles:
     show:
       title: 'プロフィール'
+    edit:
+      title: 'プロフィール編集'
+  pens:
+    index:
+      title: '万年筆一覧'
+      no_result: '万年筆がありません。'
+    new:
+      title: '万年筆登録'
+    show:
+      title: '万年筆詳細'
+    edit:
+      title: '万年筆編集'
+  favorite_pens:
+    index:
+      title: 'お気に入り万年筆一覧'
+  inks:
+    index:
+      title: 'インク一覧'
+      no_result: 'インクがありません。'
+    new:
+      title: 'インク登録'
+    show:
+      title: 'インク詳細'
+    edit:
+      title: 'インク編集'
+  favorite_inks:
+    index:
+      title: 'お気に入りインク一覧'
+  mypage:
+    pens:
+      index:
+        title: '自分の万年筆'
+    inks:
+      index:
+        title: '自分のインク'
+  pagination:
+    previous: "前へ"
+    next: "次へ"
+    truncate: '...'

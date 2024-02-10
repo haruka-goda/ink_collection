@@ -1,0 +1,46 @@
+<% content_for(:title, t('.title')) %>
+<div class="w-5/6 mx-auto text-center max-w-lg">
+  <div class="my-12 border-dotted border-b-4 border-purple-200">
+    <h1 class="text-lg sm:text-2xl font-bold my-10 border-dotted border-b-4 border-purple-200">プロフィール編集</h1>
+
+    <%= form_with model: @user, url: profile_path, local: true do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <div class="flex flex-col">
+        <div class="form-group">
+          <span class="font-medium text-sm block">プロフィール画像</span>
+          <label class="my-2 btn btn-primary font-medium text-sm text-center">
+            <span class="ml-5">画像を選択する</span> 
+            <%= f.file_field :avatar, class: "hidden", accept: 'image/*'  %>
+          </label>
+          <%= f.hidden_field :avatar_cache %>
+        </div>
+        <%= image_tag @user.avatar.url,
+                      class: 'border rounded-full mx-auto',
+                      id: 'preview',
+                      size: '200x200' %>
+      </div>
+
+      <div class="w-full">
+        <label class="form-control mb-5">
+          <div class="label">
+            <span class="label-text">Email</span>
+          </div>
+          <%= f.email_field :email, placeholder: "変更したいメールアドレス", class: "input border-purple-200 w-full" %>
+        </label>
+        <label class="form-control mb-5">
+          <div class="label">
+            <span class="label-text">Name</span>
+          </div>
+          <%= f.text_field :name, placeholder: "変更したい名前", class: "input border-purple-200 w-full" %>
+        </label>
+      </div>
+
+      <div class="my-10">
+        <%= f.submit "更新", class: "block p-3 w-full bg-primary rounded-full hover:opacity-80 font-medium" %>
+        <div class="my-10"><%= link_to "キャンセル", profile_path, class: "block p-3 rounded-full hover:bg-purple-50 font-medium mb-10 border-2 border-primary" %></div>
+      </div>
+    <% end %>
+  </div>
+  <div><%= link_to "アカウント削除", root_path, class: "block p-3 w-full bg-secondary rounded-full hover:opacity-80 font-medium mt-8 mb-16" %></div>
+</div>

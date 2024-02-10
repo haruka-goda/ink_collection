@@ -1,7 +1,8 @@
 <%= link_to product_path_helper(product) do %>
-  <div class="rounded-2xl my-4 flex bg-base-100 shadow-xl hover:transform hover:translate-y-1 ">
+  <div class="rounded-2xl my-4 flex bg-base-100 shadow-xl hover:animate-bounce">
     <div class="w-3/12">
-      <%= image_tag 'logo.jpg', class: 'rounded-l-2xl' %>        
+      <% image_url = product.try(:ink_image)&.url || product.try(:pen_image)&.url %>
+      <%= image_tag image_url, class: 'rounded-l-2xl' if image_url.present? %>
     </div>
     <div class="w-8/12">
       <div class="h-full flex items-center">

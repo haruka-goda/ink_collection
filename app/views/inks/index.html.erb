@@ -1,23 +1,14 @@
-<div class="flex justify-center mx-auto w-4/5 max-w-lg">
-  <div class='text-center'>
-    <div class=" mx-auto my-8 sm:my-20 w-full">
-      <h1 class="w-full text-lg sm:text-2xl font-bold my-10 border-dotted border-b-4 border-purple-200">Ink</h1>
+<% content_for(:title, t('.title')) %>
+<div class="mx-auto w-5/6 max-w-lg text-center my-10">
+  <h1 class="mb-4 text-lg sm:text-2xl font-bold border-dotted border-b-4 border-purple-200">Inks</h1>
+  <%= render 'inks/search_select_form', url: inks_path %>
+  <% if @inks.present? %>
+    <%= render partial: 'shared/product_card', collection: @inks, as: :product %>
+  <% else %>
+    <p class="mt-10">見つかりませんでした</p>
+  <% end %>
 
-      <% if @inks.present? %>
-        <%= render partial: 'shared/product_card', collection: @inks, as: :product %>
-      <% else %>
-        <p>見つかりませんでした</p>
-      <% end %>
-
-      <div class="my-8 sm:mt-16">
-        <div class="join border">
-          <button class="join-item btn">1</button>
-          <button class="join-item btn btn-active">2</button>
-          <button class="join-item btn">3</button>
-          <button class="join-item btn">4</button>
-        </div>      
-      </div>
-
-    </div>
+  <div class="my-8 sm:mt-16">
+    <%= paginate @inks %>
   </div>
 </div>

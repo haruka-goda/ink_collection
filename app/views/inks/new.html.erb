@@ -1,6 +1,5 @@
-<div class="flex justify-center mx-auto w-5/6">
-  <div class="max-w-lg mx-auto text-center my-20">
-    <h1 class="text-lg font-bold my-10 border-b-4 border-dotted border-purple-200 sm:text-2xl">New Ink</h1>
-    <%= render 'form', ink: @ink %>
-  </div>
+<% content_for(:title, t('.title')) %>
+<div class="mx-auto w-5/6 max-w-lg text-center my-10">
+  <h1 class="mb-4 text-2xl font-bold border-b-4 border-dotted border-purple-200">New Ink</h1>
+  <%= render 'form', ink: @ink %>
 </div>

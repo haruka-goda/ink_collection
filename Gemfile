@@ -58,9 +58,15 @@ group :development, :test do
   gem 'factory_bot_rails'
 end
 
+gem 'carrierwave'
+gem 'dotenv-rails'
+gem 'fog-aws'
+gem "meta-tags"
+gem 'kaminari'
 gem 'sorcery'
 gem 'pry-byebug'
 gem 'rails-i18n'
+gem 'ransack'
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]

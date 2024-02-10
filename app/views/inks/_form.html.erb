@@ -1,20 +1,30 @@
-<div class="flex items-center flex-col mb-6">
-  <%= image_tag 'logo.jpg', class: ' my-auto mb-6 border' %>
-  <button class="btn btn-primary">画像選択</button>
-</div>
-
 <%= form_with model: ink, local: true, class: "space-y-5" do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
+
+  <div class="flex flex-col mb-6">
+    <div class="form-group">
+      <label class="my-2 btn btn-primary font-medium text-sm text-center">
+        <span class="ml-5">画像を選択する</span> 
+        <%= f.file_field :ink_image, class: "hidden", accept: 'image/*'  %>
+      </label>
+      <%= f.hidden_field :ink_image_cache %>
+    </div>
+    <%= image_tag ink.ink_image.url,
+                  class: 'mx-auto',
+                  id: 'preview',
+                  size: '300x200' %>
+  </div>
+
   <label class="form-control mb-5">
     <div class="label">
-      <%= f.label :brand, class: "label-text" %>
+      <%= f.label :brand, "Brand <span class='text-primary text-xs'>※必須</span>".html_safe, class: "label-text" %>
     </div>
-    <%= f.select :brand, ['パイロット', 'セーラー', 'プラチナ'], { include_blank: 'メーカー名' }, { class: 'select select-bordered w-full' } %>
+    <%= f.select :brand, grouped_options_for_select(Ink::BRANDS, f.object.brand), { include_blank: 'メーカー名' }, { class: 'select select-bordered w-full' } %>
   </label>
 
   <label class="form-control mb-5">
     <div class="label">
-      <%= f.label :name, class: "label-text" %>
+      <%= f.label :name, "Name <span class='text-primary text-xs'>※必須</span>".html_safe, class: "label-text" %>
     </div>
     <%= f.text_field :name, class: 'input input-bordered w-full', placeholder: "インクの名前" %>
   </label> 
@@ -23,7 +33,14 @@
     <div class="label">
       <%= f.label :color, class: "label-text" %>
     </div>
-    <%= f.select :color, ['黒', 'ブルーブラック', '青'], { include_blank: '色' }, { class: 'select select-bordered w-full' } %>
+    <%= f.select :color, Ink::COLORS, { include_blank: '色' }, { class: 'select select-bordered w-full' } %>
+  </label>
+
+  <label class="form-control mb-5">
+    <div class="label">
+      <%= f.label :ink_level, class: "label-text" %>
+    </div>
+    <%= f.select :ink_level, Ink::INK_LEVELS, { include_blank: 'インク残量' }, { class: 'select select-bordered w-full' } %>
   </label>
   
   <label class="form-control mb-5">
@@ -41,7 +58,7 @@
   </label>
 
   <div class="pt-8">
-    <%= f.submit "投稿", class: 'btn btn-primary w-full' %>
+    <%= f.submit "登録", class: 'btn btn-primary w-full' %>
   </div>
   
 <% end %>

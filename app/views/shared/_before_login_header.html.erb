@@ -4,10 +4,8 @@
     <div class="drawer-content flex flex-col">
       <div class="w-full h-fit navbar bg-base-100 bg-gradient-to-r from-blue-100 to-purple-100">
 
-        <div class="flex-1 px-2 mx-2">          
-          <%= link_to root_path do %>
-            <%= image_tag('headerlogo_b.png', class: 'max-h-16') %>
-          <% end %>
+        <div class="flex-1 px-2 mx-2">
+          <%= link_to "INK Collection", root_path, class: "pt-2 font-bold text-2xl hover:opacity-60" %>     
         </div>
 
         <div class="flex-none lg:hidden">
@@ -28,10 +26,10 @@
 
     <div class="drawer-side z-10">
       <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label> 
-      <ul class="menu p-4 w-80 min-h-full bg-base-200">
-        <li><%= link_to (t 'defaults.login'), login_path %></li>
-        <li><%= link_to (t 'defaults.register'), new_user_path %></li>
-        <li><%= link_to (t 'defaults.about'), root_path(anchor: "about") %></li>
+      <ul class="menu p-4 w-60 min-h-full bg-base-200">
+        <li><%= link_to (t 'defaults.login'), login_path, class: "block px-4 py-2 my-1 hover:bg-purple-100 rounded-full" %></li>
+        <li><%= link_to (t 'defaults.register'), new_user_path, class: "block px-4 py-2 my-1 hover:bg-purple-100 rounded-full" %></li>
+        <li><%= link_to (t 'defaults.about'), root_path(anchor: "about"), class: "block px-4 py-2 my-1 hover:bg-purple-100 rounded-full" %></li>
       </ul>
     </div>
   </div>

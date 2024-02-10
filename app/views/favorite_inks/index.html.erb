@@ -1,0 +1,14 @@
+<% content_for(:title, t('.title')) %>
+<div class="mx-auto w-5/6 max-w-lg text-center my-10">
+  <h1 class="mb-4 text-lg sm:text-2xl font-bold border-dotted border-b-4 border-purple-200">Favorite Inks ★</h1>
+  <%= render 'inks/search_select_form', url: favorite_inks_path %>
+  <% if @favorite_inks.present? %>
+    <%= render partial: 'shared/product_card', collection: @favorite_inks, as: :product %>
+  <% else %>
+    <p class="mt-10">まだお気に入りが登録されていません</p>
+  <% end %>
+
+  <div class="my-8 sm:mt-16">
+    <%= paginate @favorite_inks %>
+  </div>
+</div>
