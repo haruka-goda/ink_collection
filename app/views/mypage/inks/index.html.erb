@@ -1,7 +1,8 @@
 <% content_for(:title, t('.title')) %>
 <div class="mx-auto w-5/6 max-w-lg text-center my-10">
   <h1 class="mb-4 text-lg sm:text-2xl font-bold border-dotted border-b-4 border-purple-200">My Inks</h1>
-  <%= link_to "＋　新しくインクを登録する", new_ink_path, class: "btn bg-blue-100 hover:bg-blue-200 rounded-full" %>
+  <%= link_to "＋　新しくインクを登録する", new_ink_path, class: "btn bg-blue-100 hover:bg-blue-200 rounded-full mb-4" %>
+  <%= render 'inks/search_select_form', url: mypage_inks_path %>
   <% if @inks.present? %>
     <%= render partial: 'shared/product_card', collection: @inks, as: :product %>
   <% else %>

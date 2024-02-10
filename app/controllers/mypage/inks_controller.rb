@@ -1,5 +1,6 @@
 class Mypage::InksController < ApplicationController
   def index
-    @inks = current_user.inks.order(created_at: :desc).page(params[:page])
+    @q_inks = current_user.inks.ransack(params[:q])
+    @inks = @q_inks.result(distinct: true).order(created_at: :desc).page(params[:page])
   end
 end
