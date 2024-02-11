@@ -87,12 +87,8 @@
   </div>
   <div class="my-20">
     <h2 class="text-lg font-bold mb-8 border-dotted border-b-4 border-purple-200">みんなの万年筆とインクを探してみる</h2>
-    <div class="w-full mb-4 font-bold px-4 py-2 bg-purple-100 border-2 border-purple-200 hover:skeleton rounded-2xl">
-      <%= link_to "万年筆一覧ページへ", pens_path %>
-    </div>
-    <div class="w-full font-bold px-4 py-2 bg-blue-100 border-2 border-blue-200 hover:skeleton rounded-2xl">
-      <%= link_to "インク一覧ページへ", inks_path %>
-    </div>      
+    <%= link_to "万年筆一覧ページへ", pens_path, class: "block mb-4 font-bold px-4 py-2 bg-purple-100 border-2 border-purple-200 hover:skeleton rounded-2xl" %>
+    <%= link_to "インク一覧ページへ", inks_path, class: "block font-bold px-4 py-2 bg-blue-100 border-2 border-blue-200 hover:skeleton rounded-2xl" %>     
 
     <div class="mx-auto my-8 card bg-purple-100 text-primary-content shadow-xl">
       <div class="card-body">
