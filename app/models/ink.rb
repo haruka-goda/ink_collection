@@ -2,6 +2,8 @@ class Ink < ApplicationRecord
   mount_uploader :ink_image, InkImageUploader
   belongs_to :user
   has_many :pens
+  has_many :favorite_ink, dependent: :destroy
+  has_many :favorited_inks, through: :favorite_ink, source: :ink
 
   validates :name, presence: true, length: { maximum: 40 }
   validates :brand, presence: true
