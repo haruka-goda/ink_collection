@@ -32,8 +32,8 @@
       <div class="card-body">
         <h2 class="font-bold text-xl">インクコレクションで<br class="sm:hidden">できること</h2>
         <p class="text-left leading-8">投稿されている万年筆やインクの情報を検索し、一覧で見ることができます。</p>
-      </div>
-      <%= image_tag('dummy.png', class: 'w-full') %>
+        <%= image_tag('top1.webp', class: 'my-2') %>
+      </div>      
     </div>
   </div>
   <div class="mx-auto">
@@ -41,8 +41,8 @@
       <div class="card-body">
         <h2 class="font-bold text-xl">ログインするとさらに！</h2>
         <p class="text-left leading-8">自分の持っている万年筆とインクを登録できます。<br>また、<strong>今使っている万年筆にどのインクが入っているかを紐づけて、管理</strong>することができます</p>
-      </div>
-      <%= image_tag('dummy.png', class: 'w-full') %>
+        <%= image_tag('top2.webp', class: 'my-2') %>
+      </div>      
     </div>
   </div>
   <div class="my-20">
@@ -96,7 +96,7 @@
 
     <div class="mx-auto my-8 card bg-purple-100 text-primary-content shadow-xl">
       <div class="card-body">
-        <h3 class="font-bold text-xl mb-2 border-dotted border-b-4 border-white">メーカーから万年筆を探す</h3>
+        <h3 class="font-bold text-lg mb-2 border-dotted border-b-4 border-white">メーカーから万年筆を探す</h3>
         <div>
           <% Pen::BRANDS.each do |_, brands| %>
             <% brands.each do |brand| %>
@@ -108,7 +108,7 @@
     </div>
     <div class="mx-auto my-8 card bg-blue-100 text-primary-content shadow-xl">
       <div class="card-body">   
-        <h3 class="font-bold text-xl mb-2 border-dotted border-b-4 border-white">メーカーからインクを探す</h3>
+        <h3 class="font-bold text-lg mb-2 border-dotted border-b-4 border-white">メーカーからインクを探す</h3>
         <div class="">
           <% Ink::BRANDS.each do |_, brands| %>
             <% brands.each do |brand| %>
