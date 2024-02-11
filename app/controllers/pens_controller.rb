@@ -14,13 +14,13 @@ class PensController < ApplicationController
 
   def create
     @pen = current_user.pens.build(pen_params)
+    @user_inks = current_user.inks.select(:id, :brand, :name)
     if @pen.save
       redirect_to mypage_pens_path, success: t('defaults.message.created', item: Pen.model_name.human)
     else
       flash.now['error'] = t('defaults.message.not_created', item: Pen.model_name.human)
       render :new, status: :unprocessable_entity
     end
-    @user_inks = current_user.inks.select(:id, :brand, :name)
   end
 
   def show
