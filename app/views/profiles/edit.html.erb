@@ -16,9 +16,8 @@
           <%= f.hidden_field :avatar_cache %>
         </div>
         <%= image_tag @user.avatar.url,
-                      class: 'border rounded-full mx-auto',
-                      id: 'preview',
-                      size: '200x200' %>
+                      class: 'rounded-full h-32 w-32 mx-auto my-2 border',
+                      id: 'preview' %>
       </div>
 
       <div class="w-full">
