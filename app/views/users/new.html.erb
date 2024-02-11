@@ -37,7 +37,7 @@
           <span class="font-medium text-sm block">プロフィール画像</span>
           <label class="my-2 btn btn-primary font-medium text-sm text-center">
             <span class="ml-5">画像を選択する</span> 
-            <%= f.file_field :avatar, class: "hidden", accept: 'image/*'  %>
+            <%= f.file_field :avatar, class: "hidden", accept: 'image/*', id: "input" %>
           </label>
           <%= f.hidden_field :avatar_cache %>
         </div>
