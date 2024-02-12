@@ -1,6 +1,6 @@
 class InksController < ApplicationController
-  skip_before_action :require_login, only: [:index, :show]
-  before_action :find_ink, only: [:edit, :update, :destroy]
+  skip_before_action :require_login, only: %i[index show]
+  before_action :find_ink, only: %i[edit update destroy]
 
   def index
     @q_inks = Ink.ransack(params[:q])
@@ -42,11 +42,11 @@ class InksController < ApplicationController
     redirect_to mypage_inks_path, status: :see_other, success: t('defaults.message.deleted', item: Ink.model_name.human)
   end
 
-
   private
 
   def ink_params
-    params.require(:ink).permit(:name, :brand, :color, :ink_level, :purchase_date, :description, :ink_image, :ink_image_cache)
+    params.require(:ink).permit(:name, :brand, :color, :ink_level, :purchase_date, :description, :ink_image,
+                                :ink_image_cache)
   end
 
   def find_ink

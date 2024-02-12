@@ -13,14 +13,14 @@ class PenImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-	def default_url
+  def default_url
     'pen_placeholder.webp'
   end
 
   process resize_to_limit: [600, 600]
 
   def extension_whitelist
-    %w(jpg jpeg gif png heic webp)
+    %w[jpg jpeg gif png heic webp]
   end
 
   process :convert_to_webp

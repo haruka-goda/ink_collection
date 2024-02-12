@@ -15,11 +15,11 @@ class Pen < ApplicationRecord
   }.freeze
   NIB_SIZES = ['BB（極太）', 'B（太字）', 'M（中字）', 'MF（中細）', 'F（細字）', 'EF（極細）', 'その他'].freeze
 
-  def self.ransackable_attributes(auth_object = nil)
+  def self.ransackable_attributes(_auth_object = nil)
     %w[name brand]
   end
 
-  def self.ransackable_associations(auth_object = nil)
+  def self.ransackable_associations(_auth_object = nil)
     %w[name brand]
   end
 end

@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   def set_search_pens
     @q_pens = Pen.ransack(params[:q_pens])
   end
-  
+
   def set_search_inks
     @q_inks = Ink.ransack(params[:q_inks])
   end
