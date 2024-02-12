@@ -17,7 +17,7 @@ class Ink < ApplicationRecord
   INK_LEVELS = ['40ml以上', '39ml〜11ml', '10ml以下'].freeze
 
   def self.ransackable_attributes(auth_object = nil)
-    %w[name brand]
+    %w[name brand color]
   end
 
   def self.ransackable_associations(auth_object = nil)
