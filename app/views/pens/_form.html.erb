@@ -5,7 +5,7 @@
     <div class="form-group">
       <label class="my-2 btn btn-primary font-medium text-sm text-center">
         <span class="ml-5">画像を選択する</span> 
-        <%= f.file_field :pen_image, class: "hidden", accept: 'image/*'  %>
+        <%= f.file_field :pen_image, class: "hidden", accept: 'image/*', id: "input" %>
       </label>
       <%= f.hidden_field :pen_image_cache %>
     </div>
@@ -17,7 +17,7 @@
 
   <label class="form-control mb-5">
     <div class="label">
-      <%= f.label :brand, "Brand <span class='text-primary text-xs'>※必須</span>".html_safe, class: "label-text" %>
+      <%= f.label :brand, "Brand <span class='text-primary text-xs'>※必須　40文字以内</span>".html_safe, class: "label-text" %>
     </div>
     <%= f.select :brand, grouped_options_for_select(Pen::BRANDS, f.object.brand), { include_blank: 'メーカー名' }, { class: 'select select-bordered w-full' } %>
   </label>
@@ -38,14 +38,14 @@
   
   <label class="form-control mb-5">
     <div class="label">
-      <%= f.label :purchase_date, class: "label-text" %>
+      <%= f.label :purchase_date, "購入日", class: "label-text" %>
     </div>
     <%= f.date_field :purchase_date, class: 'input input-bordered w-full', placeholder: "購入日" %>
   </label>
 
   <label class="form-control mb-14">
     <div class="label">
-      <%= f.label :description, class: "label-text" %>
+      <%= f.label :description, "Memo <span class='text-xs'>140文字以内</span>".html_safe, class: "label-text" %>
     </div>
     <%= f.text_area :description, class: 'textarea textarea-bordered w-full h-24', placeholder: "感想などご自由に！" %>
   </label>

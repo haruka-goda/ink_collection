@@ -1,7 +1,9 @@
 class Ink < ApplicationRecord
   mount_uploader :ink_image, InkImageUploader
   belongs_to :user
-  has_many :pens
+  has_many :pens, dependent: :nullify
+  has_many :favorite_ink, dependent: :destroy
+  has_many :favorited_inks, through: :favorite_ink, source: :ink
 
   validates :name, presence: true, length: { maximum: 40 }
   validates :brand, presence: true
@@ -15,7 +17,7 @@ class Ink < ApplicationRecord
   INK_LEVELS = ['40ml以上', '39ml〜11ml', '10ml以下'].freeze
 
   def self.ransackable_attributes(auth_object = nil)
-    %w[name brand]
+    %w[name brand color]
   end
 
   def self.ransackable_associations(auth_object = nil)

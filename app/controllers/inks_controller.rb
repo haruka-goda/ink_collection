@@ -23,7 +23,7 @@ class InksController < ApplicationController
 
   def show
     @ink = Ink.find(params[:id])
-    @pens = current_user.pens
+    @pens = current_user&.pens || []
   end
 
   def edit; end

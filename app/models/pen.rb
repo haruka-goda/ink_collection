@@ -2,6 +2,8 @@ class Pen < ApplicationRecord
   mount_uploader :pen_image, PenImageUploader
   belongs_to :user
   belongs_to :ink, optional: true
+  has_many :favorite_pen, dependent: :destroy
+  has_many :favorited_pens, through: :favorite_pen, source: :pen
 
   validates :name, presence: true, length: { maximum: 40 }
   validates :brand, presence: true

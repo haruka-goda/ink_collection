@@ -11,14 +11,13 @@
           <span class="font-medium text-sm block">プロフィール画像</span>
           <label class="my-2 btn btn-primary font-medium text-sm text-center">
             <span class="ml-5">画像を選択する</span> 
-            <%= f.file_field :avatar, class: "hidden", accept: 'image/*'  %>
+            <%= f.file_field :avatar, class: "hidden", accept: 'image/*', id: "input" %>
           </label>
           <%= f.hidden_field :avatar_cache %>
         </div>
         <%= image_tag @user.avatar.url,
-                      class: 'border rounded-full mx-auto',
-                      id: 'preview',
-                      size: '200x200' %>
+                      class: 'rounded-full h-32 w-32 mx-auto my-2 border',
+                      id: 'preview' %>
       </div>
 
       <div class="w-full">

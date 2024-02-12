@@ -32,7 +32,7 @@
         <% else %>
           <div class="flex justify-between">
             <div class="flex items-center">
-              <%= image_tag 'avatar.png', class: 'h-12' %>
+              <%= image_tag @pen.user.avatar.url, class: 'w-12 h-12 rounded-full' %>
               <p class="mx-2 text-xs lg:text-base">Posted by</p>
               <%= @pen.user.name %>
             </div>

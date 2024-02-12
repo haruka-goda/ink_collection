@@ -1,0 +1,14 @@
+<div role="tablist" class="tabs tabs-lifted w-full">
+  <input type="radio" name="my_tabs_2" role="tab" class="tab font-bold w-full" aria-label="インクを探す" checked />
+  <div role="tabpanel" class="tab-content bg-blue-50 border-base-300 rounded-box p-6 w-full">
+    <%= render 'inks/search_form', url: inks_path %>
+    <div class="pt-4 text-xs font-medium">インクの名前,メーカー名,色で検索できます</div>
+    <div class="pt-2 text-xs font-medium">空白のまま検索すると一覧が表示されます</div>
+  </div>
+  <input type="radio" name="my_tabs_2" role="tab" class="tab font-bold w-full" aria-label="万年筆を探す" />
+  <div role="tabpanel" class="tab-content bg-purple-50 border-base-300 rounded-box p-6 w-full">
+    <%= render 'pens/search_form', url: pens_path %>
+    <div class="pt-4 text-xs font-medium">万年筆の名前,メーカー名で検索できます</div>
+    <div class="pt-2 text-xs font-medium">空白のまま検索すると一覧が表示されます</div>
+  </div>
+</div>

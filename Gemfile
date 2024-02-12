@@ -62,6 +62,7 @@ gem 'carrierwave'
 gem 'dotenv-rails'
 gem 'fog-aws'
 gem "meta-tags"
+gem 'mini_magick'
 gem 'kaminari'
 gem 'sorcery'
 gem 'pry-byebug'

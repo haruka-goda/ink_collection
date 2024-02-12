@@ -338,6 +338,7 @@ DEPENDENCIES
   jsbundling-rails
   kaminari
   meta-tags
+  mini_magick
   pg
   pry-byebug
   puma (~> 5.0)

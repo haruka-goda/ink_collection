@@ -1,6 +1,6 @@
 <% content_for(:title, t('.title')) %>
 <div class="mx-auto w-5/6 max-w-lg text-center my-10">
-  <h1 class="mb-4 text-lg sm:text-2xl font-bold border-dotted border-b-4 border-purple-200">Favorite Inks ★</h1>
+  <h1 class="mb-4 text-lg sm:text-2xl font-bold border-dotted border-b-4 border-purple-200">Favorite Pens ★</h1>
   <%= render 'pens/search_select_form', url: favorite_pens_path %>
   <% if @favorite_pens.present? %>
     <%= render partial: 'shared/product_card', collection: @favorite_pens, as: :product %>
