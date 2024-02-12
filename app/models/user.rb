@@ -3,7 +3,7 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   has_many :pens, dependent: :destroy
-	has_many :inks, dependent: :destroy
+  has_many :inks, dependent: :destroy
   has_many :favorite_pens, dependent: :destroy
   has_many :favorited_pens, through: :favorite_pens, source: :pen
   has_many :favorite_inks, dependent: :destroy
@@ -31,7 +31,7 @@ class User < ApplicationRecord
   def favorite_pen?(pen)
     favorited_pens.include?(pen)
   end
-  
+
   def favorite_ink(ink)
     favorited_inks << ink
   end

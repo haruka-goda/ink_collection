@@ -16,12 +16,12 @@ Rails.application.routes.draw do
     resources :favorite_pens, only: %i[create destroy]
   end
   resources :favorite_pens, only: :index
-  
+
   resources :inks do
     resources :favorite_inks, only: %i[create destroy]
   end
   resources :favorite_inks, only: :index
-  
+
   namespace :mypage do
     resources :pens, only: :index
     resources :inks, only: :index

@@ -1,6 +1,6 @@
 class PensController < ApplicationController
-  skip_before_action :require_login, only: [:index, :show]
-  before_action :find_pen, only: [:edit, :update, :destroy]
+  skip_before_action :require_login, only: %i[index show]
+  before_action :find_pen, only: %i[edit update destroy]
 
   def index
     @q_pens = Pen.ransack(params[:q])
@@ -27,7 +27,7 @@ class PensController < ApplicationController
     @pen = Pen.find(params[:id])
   end
 
-  def edit; 
+  def edit
     @user_inks = current_user.inks.select(:id, :brand, :name)
   end
 
@@ -48,7 +48,8 @@ class PensController < ApplicationController
   private
 
   def pen_params
-    params.require(:pen).permit(:name, :brand, :nib, :purchase_date, :description, :pen_image, :pen_image_cache, :ink_id)
+    params.require(:pen).permit(:name, :brand, :nib, :purchase_date, :description, :pen_image, :pen_image_cache,
+                                :ink_id)
   end
 
   def find_pen

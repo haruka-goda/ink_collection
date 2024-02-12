@@ -7,6 +7,6 @@ class CreateFavoritePens < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
-    add_index :favorite_pens, [:user_id, :pen_id], unique: true
+    add_index :favorite_pens, %i[user_id pen_id], unique: true
   end
 end

@@ -7,6 +7,6 @@ class CreateFavoriteInks < ActiveRecord::Migration[7.0]
       t.timestamps
     end
 
-    add_index :favorite_inks, [:user_id, :ink_id], unique: true
+    add_index :favorite_inks, %i[user_id ink_id], unique: true
   end
 end
