@@ -114,6 +114,16 @@
         </div>
       </div>
     </div>
+    <div class="mx-auto my-8 card bg-blue-100 text-primary-content shadow-xl">
+      <div class="card-body">   
+        <h3 class="font-bold text-lg mb-2 border-dotted border-b-4 border-white">色からインクを探す</h3>
+        <div class="">
+        <% Ink::COLORS.each do |color| %>
+          <%= link_to color, inks_path(q: { color_cont: color }), class: "btn btn-sm mt-3" %>
+        <% end %>
+        </div>
+      </div>
+    </div>
     <%= link_to '↑TOPへ戻る', '#', class: "btn btn-primary shadow-xl mt-10" %>
   </div>
 </div>
